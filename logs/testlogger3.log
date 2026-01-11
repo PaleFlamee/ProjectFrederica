@@ -1,0 +1,2 @@
+2026-01-11 20:26:18 - TestLogger3 - ERROR - logger:107 - ERROR消息 - 应该只写入文件
+2026-01-11 20:26:18 - TestLogger3 - ERROR - logger:107 - 使用便捷函数记录ERROR消息

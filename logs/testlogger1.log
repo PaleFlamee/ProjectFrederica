@@ -1,0 +1,4 @@
+2026-01-11 20:26:18 - TestLogger1 - DEBUG - logger:95 - DEBUG消息 - 应该显示
+2026-01-11 20:26:18 - TestLogger1 - INFO - logger:99 - INFO消息 - 应该显示
+2026-01-11 20:26:18 - TestLogger1 - WARNING - logger:103 - WARNING消息 - 应该显示
+2026-01-11 20:26:18 - TestLogger1 - ERROR - logger:107 - ERROR消息 - 应该显示

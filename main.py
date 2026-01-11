@@ -12,6 +12,7 @@ from dotenv import load_dotenv
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.wechat_bot import get_bot
+from src.logger import get_logger
 
 
 def check_environment():
@@ -26,17 +27,18 @@ def check_environment():
             missing_vars.append(var)
     
     if missing_vars:
-        print("错误：缺少必要的环境变量：")
+        logger = get_logger()
+        logger.error("错误：缺少必要的环境变量：")
         for var in missing_vars:
-            print(f"  - {var}")
-        print("\n请检查.env文件或设置环境变量。")
-        print("企业微信配置说明：")
-        print("1. 登录企业微信管理后台")
-        print("2. 进入'应用管理' -> '自建应用'")
-        print("3. 创建或选择应用，获取以下信息：")
-        print("   - WECHAT_WORK_CORPID: 企业ID")
-        print("   - WECHAT_WORK_CORPSECRET: 应用Secret")
-        print("   - WECHAT_WORK_AGENTID: 应用ID")
+            logger.error(f"  - {var}")
+        logger.error("\n请检查.env文件或设置环境变量。")
+        logger.error("企业微信配置说明：")
+        logger.error("1. 登录企业微信管理后台")
+        logger.error("2. 进入'应用管理' -> '自建应用'")
+        logger.error("3. 创建或选择应用，获取以下信息：")
+        logger.error("   - WECHAT_WORK_CORPID: 企业ID")
+        logger.error("   - WECHAT_WORK_CORPSECRET: 应用Secret")
+        logger.error("   - WECHAT_WORK_AGENTID: 应用ID")
         return False
     
     return True
@@ -58,13 +60,14 @@ def main():
         sys.exit(1)
     
     if args.check:
-        print("环境检查通过！")
-        print(f"DeepSeek API Key: {'已设置' if os.getenv('DEEPSEEK_API_KEY') else '未设置'}")
-        print(f"API Base: {os.getenv('DEEPSEEK_API_BASE', '默认')}")
-        print(f"模型: {os.getenv('MODEL', '默认')}")
-        print(f"企业ID: {os.getenv('WECHAT_WORK_CORPID', '未设置')}")
-        print(f"应用ID: {os.getenv('WECHAT_WORK_AGENTID', '未设置')}")
-        print(f"应用Secret: {'已设置' if os.getenv('WECHAT_WORK_CORPSECRET') else '未设置'}")
+        logger = get_logger()
+        logger.info("环境检查通过！")
+        logger.info(f"DeepSeek API Key: {'已设置' if os.getenv('DEEPSEEK_API_KEY') else '未设置'}")
+        logger.info(f"API Base: {os.getenv('DEEPSEEK_API_BASE', '默认')}")
+        logger.info(f"模型: {os.getenv('MODEL', '默认')}")
+        logger.info(f"企业ID: {os.getenv('WECHAT_WORK_CORPID', '未设置')}")
+        logger.info(f"应用ID: {os.getenv('WECHAT_WORK_AGENTID', '未设置')}")
+        logger.info(f"应用Secret: {'已设置' if os.getenv('WECHAT_WORK_CORPSECRET') else '未设置'}")
         return
     
     # 获取机器人实例
@@ -72,39 +75,44 @@ def main():
     
     if args.status:
         status = bot.get_status()
-        print("机器人状态：")
-        print(f"  运行状态: {'运行中' if status['is_running'] else '已停止'}")
-        print(f"  待处理消息: {status['queue_size']}")
-        print(f"  待发送响应: {status['response_queue_size']}")
-        print(f"  活跃用户: {status['active_users']}")
-        print(f"  已处理消息: {status['processed_messages']}")
+        logger = get_logger()
+        logger.info("机器人状态：")
+        logger.info(f"  运行状态: {'运行中' if status['is_running'] else '已停止'}")
+        logger.info(f"  待处理消息: {status['queue_size']}")
+        logger.info(f"  待发送响应: {status['response_queue_size']}")
+        logger.info(f"  活跃用户: {status['active_users']}")
+        logger.info(f"  已处理消息: {status['processed_messages']}")
         return
     
     if args.clear_memory:
         from src.memory import get_memory_system
         memory = get_memory_system()
         memory.clear_user_memories(args.clear_memory)
-        print(f"已清除用户 {args.clear_memory} 的记忆")
+        logger = get_logger()
+        logger.info(f"已清除用户 {args.clear_memory} 的记忆")
         return
     
     if args.memory_summary:
         from src.memory import get_memory_system
         memory = get_memory_system()
         summary = memory.get_memory_summary(args.memory_summary)
-        print(f"用户 {args.memory_summary} 的记忆摘要：")
-        print(summary)
+        logger = get_logger()
+        logger.info(f"用户 {args.memory_summary} 的记忆摘要：")
+        logger.info(summary)
         return
     
     if args.send_test:
         success = bot.send_test_message(args.send_test, "这是一条测试消息，用于验证企业微信机器人连接。")
+        logger = get_logger()
         if success:
-            print(f"测试消息已发送到用户: {args.send_test}")
+            logger.info(f"测试消息已发送到用户: {args.send_test}")
         else:
-            print(f"发送测试消息失败，请检查配置")
+            logger.error(f"发送测试消息失败，请检查配置")
         return
     
     # 启动机器人
-    print("""
+    logger = get_logger()
+    logger.info("""
     ========================================
         Frederica - 企业微信聊天机器人
     ========================================
@@ -134,10 +142,10 @@ def main():
     try:
         bot.start()
     except KeyboardInterrupt:
-        print("\n收到停止信号，正在关闭机器人...")
+        logger.info("\n收到停止信号，正在关闭机器人...")
         bot.stop()
     except Exception as e:
-        print(f"机器人运行出错: {e}")
+        logger.error(f"机器人运行出错: {e}")
         sys.exit(1)
 
 
