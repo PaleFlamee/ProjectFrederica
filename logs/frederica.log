@@ -1566,3 +1566,2681 @@
 2026-01-11 22:24:04 - Frederica - INFO - logger:99 - 企业ID: ww1b7c2409ffbded94
 2026-01-11 22:24:04 - Frederica - INFO - logger:99 - 应用ID: 1000002
 2026-01-11 22:24:04 - Frederica - INFO - logger:99 - 应用Secret: 已设置
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 测试回调功能导入...
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好，测试消息
+2026-01-12 13:28:44 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:28:47 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:28:47 - Frederica - INFO - logger:99 - 同步消息处理回复: 你好呀！很高兴见到你！😊 我是Frederica，有什么我可以帮你的吗？
+2026-01-12 13:28:47 - Frederica - INFO - logger:99 - 回调功能测试通过
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:28:57 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:28:57 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:28:59 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:28:59 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！很高兴见到你！😊 我是Frederica，有什么我可以帮你的吗？
+2026-01-12 13:28:59 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 13:30:30 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:30:30 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:30:30 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 13:30:30 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器信息：
+    地址: 127.0.0.1
+    端口: 9999
+    
+    回调URL配置：
+    GET验证URL: http://127.0.0.1:9999/callback
+    POST消息URL: http://127.0.0.1:9999/callback
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 
+    ========================================
+        Frederica - 企业微信聊天机器人
+    ========================================
+    
+    功能特性：
+    1. 基于企业微信官方API
+    2. 异步对话处理
+    3. 长期记忆存储
+    4. 智能上下文理解
+    5. 自然语言交互
+    
+    使用说明：
+    1. 确保已正确配置企业微信应用
+    2. 机器人将自动轮询并处理消息
+    3. 支持文本消息的智能回复
+    4. 按 Ctrl+C 停止机器人
+    
+    配置要求：
+    1. DeepSeek API密钥
+    2. 企业微信企业ID、应用Secret和应用ID
+    3. 企业微信应用需要配置消息接收权限
+    
+    注意：企业微信消息接收需要配置回调或使用其他接收方式
+          当前实现使用主动轮询模式，可能需要根据实际需求调整
+    
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 启动企业微信聊天机器人...
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 15:31:15.625424
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 企业微信连接测试成功
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 开始第 1 次消息轮询...
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 机器人已启动，开始处理消息...
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 按 Ctrl+C 停止机器人
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:15 到现在的消息
+2026-01-12 13:31:15 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:15 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:15 - Frederica - DEBUG - logger:95 - 第 1 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 开始第 2 次消息轮询...
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:20 到现在的消息
+2026-01-12 13:31:20 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:20 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 第 2 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 开始第 3 次消息轮询...
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:25 到现在的消息
+2026-01-12 13:31:25 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:25 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 第 3 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 开始第 4 次消息轮询...
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:30 到现在的消息
+2026-01-12 13:31:30 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:30 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 第 4 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 开始第 5 次消息轮询...
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:35 到现在的消息
+2026-01-12 13:31:35 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:35 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:35 - Frederica - DEBUG - logger:95 - 第 5 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:36 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:36 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 开始第 6 次消息轮询...
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:40 到现在的消息
+2026-01-12 13:31:40 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:40 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:40 - Frederica - DEBUG - logger:95 - 第 6 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:44 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:44 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 开始第 7 次消息轮询...
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:45 到现在的消息
+2026-01-12 13:31:45 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:45 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 第 7 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:47 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:47 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 开始第 8 次消息轮询...
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:50 到现在的消息
+2026-01-12 13:31:50 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:50 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 第 8 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:50 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:53 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:53 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 开始第 9 次消息轮询...
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:21:55 到现在的消息
+2026-01-12 13:31:55 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:31:55 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:31:55 - Frederica - DEBUG - logger:95 - 第 9 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:31:56 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:56 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:59 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:31:59 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 开始第 10 次消息轮询...
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:22:00 到现在的消息
+2026-01-12 13:32:00 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:32:00 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:32:00 - Frederica - DEBUG - logger:95 - 第 10 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:32:01 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:01 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:03 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 开始第 11 次消息轮询...
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:22:05 到现在的消息
+2026-01-12 13:32:05 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:32:05 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 第 11 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:32:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 开始第 12 次消息轮询...
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:22:10 到现在的消息
+2026-01-12 13:32:10 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:32:10 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 第 12 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:32:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 开始第 13 次消息轮询...
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:22:15 到现在的消息
+2026-01-12 13:32:15 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:32:15 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:32:15 - Frederica - DEBUG - logger:95 - 第 13 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:32:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 开始第 14 次消息轮询...
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:22:20 到现在的消息
+2026-01-12 13:32:20 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:32:20 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:32:20 - Frederica - DEBUG - logger:95 - 第 14 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:32:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:32:25 - Frederica - INFO - logger:99 - 
+收到停止信号...
+2026-01-12 13:32:25 - Frederica - INFO - logger:99 - 停止企业微信聊天机器人...
+2026-01-12 13:32:26 - Frederica - INFO - logger:99 - 机器人已停止
+2026-01-12 13:32:43 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:32:43 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:32:43 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 15:32:43.406820
+2026-01-12 13:32:44 - Frederica - INFO - logger:99 - 测试消息发送成功: ChenMingHao - 这是一条测试消息，用于验证企业微信机器人连接。
+2026-01-12 13:32:44 - Frederica - INFO - logger:99 - 测试消息已发送到用户: ChenMingHao
+2026-01-12 13:33:02 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:33:02 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:33:02 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 15:33:02.838307
+2026-01-12 13:33:03 - Frederica - ERROR - logger:107 - 发送测试消息失败: Error code: 81013, message: user & party & tag all invalid, hint: [1768195982197391730875596], from ip: 112.96.49.30, more info at https://open.work.weixin.qq.com/devtool/query?e=81013
+2026-01-12 13:33:03 - Frederica - ERROR - logger:107 - 发送测试消息失败，请检查配置
+2026-01-12 13:33:13 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:33:13 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:33:14 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 15:33:14.395447
+2026-01-12 13:33:14 - Frederica - INFO - logger:99 - 测试消息发送成功: ChenMingHao - 这是一条测试消息，用于验证企业微信机器人连接。
+2026-01-12 13:33:14 - Frederica - INFO - logger:99 - 测试消息已发送到用户: ChenMingHao
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 
+    ========================================
+        Frederica - 企业微信聊天机器人
+    ========================================
+    
+    功能特性：
+    1. 基于企业微信官方API
+    2. 异步对话处理
+    3. 长期记忆存储
+    4. 智能上下文理解
+    5. 自然语言交互
+    
+    使用说明：
+    1. 确保已正确配置企业微信应用
+    2. 机器人将自动轮询并处理消息
+    3. 支持文本消息的智能回复
+    4. 按 Ctrl+C 停止机器人
+    
+    配置要求：
+    1. DeepSeek API密钥
+    2. 企业微信企业ID、应用Secret和应用ID
+    3. 企业微信应用需要配置消息接收权限
+    
+    注意：企业微信消息接收需要配置回调或使用其他接收方式
+          当前实现使用主动轮询模式，可能需要根据实际需求调整
+    
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 启动企业微信聊天机器人...
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 15:34:03.735199
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 企业微信连接测试成功
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 开始第 1 次消息轮询...
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 机器人已启动，开始处理消息...
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 按 Ctrl+C 停止机器人
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:03 到现在的消息
+2026-01-12 13:34:03 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:03 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:03 - Frederica - DEBUG - logger:95 - 第 1 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 开始第 2 次消息轮询...
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:08 到现在的消息
+2026-01-12 13:34:08 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:08 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:08 - Frederica - DEBUG - logger:95 - 第 2 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 开始第 3 次消息轮询...
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:13 到现在的消息
+2026-01-12 13:34:13 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:13 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 第 3 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 开始第 4 次消息轮询...
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:18 到现在的消息
+2026-01-12 13:34:18 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:18 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 第 4 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 开始第 5 次消息轮询...
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:23 到现在的消息
+2026-01-12 13:34:23 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:23 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:23 - Frederica - DEBUG - logger:95 - 第 5 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 开始第 6 次消息轮询...
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:28 到现在的消息
+2026-01-12 13:34:28 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:28 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:28 - Frederica - DEBUG - logger:95 - 第 6 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 开始第 7 次消息轮询...
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 13:24:33 到现在的消息
+2026-01-12 13:34:33 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 13:34:33 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 第 7 次轮询完成，等待 5 秒后继续...
+2026-01-12 13:34:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:34 - Frederica - INFO - logger:99 - 
+收到停止信号...
+2026-01-12 13:34:34 - Frederica - INFO - logger:99 - 停止企业微信聊天机器人...
+2026-01-12 13:34:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 13:34:38 - Frederica - INFO - logger:99 - 机器人已停止
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:34:46 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:34:46 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:34:47 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:34:49 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:34:49 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！很高兴再次见到你！😊 今天有什么想聊的或者需要帮助的吗？
+2026-01-12 13:34:49 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 13:35:02 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:35:02 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:35:02 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 13:35:03 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器信息：
+    地址: 0.0.0.0
+    端口: 8080
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 13:40:39 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 13:40:39 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 13:40:44 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:40:45 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:40:45 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:40:47 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:40:47 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！很高兴见到你！😊 我是Frederica，有什么我可以帮你的吗？
+2026-01-12 13:40:47 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 13:43:25 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:43:25 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:43:25 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 13:43:26 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器信息：
+    地址: 0.0.0.0
+    端口: 8080
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 13:47:44 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 13:47:44 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 13:53:38 - Frederica - DEBUG - logger:95 - 这是一条DEBUG测试消息 - 应该出现在日志中
+2026-01-12 13:53:38 - Frederica - INFO - logger:99 - 这是一条INFO测试消息 - 应该出现在日志中
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:53:45 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:53:45 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:53:47 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:53:47 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！今天过得怎么样？有什么我可以为你做的吗？😊
+2026-01-12 13:53:47 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - msg_signature: test_signature... (长度: 14)
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - timestamp: 1234567890
+2026-01-12 13:54:42 - Frederica - DEBUG - logger:95 - nonce: test_nonce
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:54:42 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:54:42 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:54:44 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:54:44 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！今天过得怎么样？有什么我可以为你做的吗？😊
+2026-01-12 13:54:44 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 13:55:40 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:55:40 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:55:40 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 13:55:41 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器信息：
+    地址: 0.0.0.0
+    端口: 8080
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 13:59:21 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 13:59:21 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 测试回调功能...
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 测试GET验证...
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'test_signature', 'timestamp': '1234567890', 'nonce': 'test_nonce', 'echostr': 'test_echostr'}
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - msg_signature: test_signature... (长度: 14)
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - timestamp: 1234567890
+2026-01-12 13:59:28 - Frederica - DEBUG - logger:95 - nonce: test_nonce
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: test_echostr
+2026-01-12 13:59:28 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - GET测试结果: Signature verification failed
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 测试同步消息处理...
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 同步处理消息: 用户=test_user, 内容=你好
+2026-01-12 13:59:28 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应...
+2026-01-12 13:59:30 - Frederica - INFO - logger:99 - 为 test_user 生成同步响应完成
+2026-01-12 13:59:30 - Frederica - INFO - logger:99 - 同步消息处理结果: 你好呀！今天过得怎么样？有什么我可以为你做的吗？😊
+2026-01-12 13:59:30 - Frederica - INFO - logger:99 - 回调功能测试完成
+2026-01-12 14:06:13 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 14:06:13 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 14:06:13 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 14:06:13 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    监听地址: 127.0.0.1
+    监听端口: 9998
+    
+    监听地址说明：
+    - 127.0.0.1: 只允许本机访问（外部网络无法访问）
+    
+    回调URL配置：
+    GET验证URL: http://127.0.0.1:9998/callback
+    POST消息URL: http://127.0.0.1:9998/callback
+    
+    重要提示：
+    1. 如果监听地址是 0.0.0.0，外部网络可以通过服务器IP地址访问
+    2. 如果监听地址是 127.0.0.1 或 localhost，只能从本机访问
+    3. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 14:07:02 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 14:07:02 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 14:07:02 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 14:07:04 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    监听地址: 0.0.0.0
+    监听端口: 8080
+    
+    监听地址说明：
+    - 0.0.0.0: 允许所有网络接口访问（本机和外部网络均可访问）
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 0.0.0.0，外部网络可以通过服务器IP地址访问
+    2. 如果监听地址是 127.0.0.1 或 localhost，只能从本机访问
+    3. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 14:07:51 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 14:07:51 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 14:08:00 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 14:08:00 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 14:08:00 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 14:08:01 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    监听地址: 0.0.0.0
+    监听端口: 8080
+    
+    监听地址说明：
+    - 0.0.0.0: 允许所有网络接口访问（本机和外部网络均可访问）
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 0.0.0.0，外部网络可以通过服务器IP地址访问
+    2. 如果监听地址是 127.0.0.1 或 localhost，只能从本机访问
+    3. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['ASDFQWEXZCVAQFASDFASDFSS'], 'timestamp': ['13500001234'], 'nonce': ['123412323'], 'echostr': ['ENCRYPT_STR']}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR', fragment='')
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 参数 msg_signature: ASDFQWEXZCVAQFASDFASDFSS (长度: 24)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 参数 timestamp: 13500001234 (长度: 11)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 参数 nonce: 123412323 (长度: 9)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 参数 echostr: ENCRYPT_STR (长度: 11)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - msg_signature: ASDFQWEXZCVAQFASDFAS... (长度: 24)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - timestamp: 13500001234
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - nonce: 123412323
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: ENCRYPT_STR
+2026-01-12 14:08:39 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR HTTP/1.1" 200 -
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 29
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应内容: Signature verification failed
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 14:08:39 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 14:08:39 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:08:39 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['ASDFQWEXZCVAQFASDFASDFSS'], 'timestamp': ['13500001234'], 'nonce': ['123412323'], 'echostr': ['ENCRYPT_STR']}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR', fragment='')
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 参数 msg_signature: ASDFQWEXZCVAQFASDFASDFSS (长度: 24)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 参数 timestamp: 13500001234 (长度: 11)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 参数 nonce: 123412323 (长度: 9)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 参数 echostr: ENCRYPT_STR (长度: 11)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - msg_signature: ASDFQWEXZCVAQFASDFAS... (长度: 24)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - timestamp: 13500001234
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - nonce: 123412323
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: ENCRYPT_STR
+2026-01-12 14:10:11 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR HTTP/1.1" 200 -
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 29
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应内容: Signature verification failed
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 14:10:11 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 14:10:11 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:10:11 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 14:11:05 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 14:11:05 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 14:11:13 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 14:11:13 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 14:11:13 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 14:11:14 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    监听地址: 0.0.0.0
+    监听端口: 8080
+    
+    监听地址说明：
+    - 0.0.0.0: 允许所有网络接口访问（本机和外部网络均可访问）
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 0.0.0.0，外部网络可以通过服务器IP地址访问
+    2. 如果监听地址是 127.0.0.1 或 localhost，只能从本机访问
+    3. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['ASDFQWEXZCVAQFASDFASDFSS'], 'timestamp': ['13500001234'], 'nonce': ['123412323'], 'echostr': ['ENCRYPT_STR']}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR', fragment='')
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 参数 msg_signature: ASDFQWEXZCVAQFASDFASDFSS (长度: 24)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 参数 timestamp: 13500001234 (长度: 11)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 参数 nonce: 123412323 (长度: 9)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 参数 echostr: ENCRYPT_STR (长度: 11)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - msg_signature: ASDFQWEXZCVAQFASDFAS... (长度: 24)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - timestamp: 13500001234
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - nonce: 123412323
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: ENCRYPT_STR
+2026-01-12 14:11:21 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR HTTP/1.1" 200 -
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 29
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应内容: Signature verification failed
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 14:11:21 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 14:11:21 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 14:11:21 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 15:49:03 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 15:49:03 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 17:08:59 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:08:59 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:08:59 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 17:09:00 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    监听地址: 0.0.0.0
+    监听端口: 8080
+    
+    监听地址说明：
+    - 0.0.0.0: 允许所有网络接口访问（本机和外部网络均可访问）
+    
+    回调URL配置：
+    GET验证URL: http://localhost:8080/callback
+    POST消息URL: http://localhost:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 0.0.0.0，外部网络可以通过服务器IP地址访问
+    2. 如果监听地址是 127.0.0.1 或 localhost，只能从本机访问
+    3. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['ASDFQWEXZCVAQFASDFASDFSS'], 'timestamp': ['13500001234'], 'nonce': ['123412323'], 'echostr': ['ENCRYPT_STR']}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR', fragment='')
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 参数 msg_signature: ASDFQWEXZCVAQFASDFASDFSS (长度: 24)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 参数 timestamp: 13500001234 (长度: 11)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 参数 nonce: 123412323 (长度: 9)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 参数 echostr: ENCRYPT_STR (长度: 11)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - msg_signature: ASDFQWEXZCVAQFASDFAS... (长度: 24)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - timestamp: 13500001234
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - nonce: 123412323
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: ENCRYPT_STR
+2026-01-12 17:09:03 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR HTTP/1.1" 200 -
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 29
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应内容: Signature verification failed
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:09:03 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:09:03 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:09:03 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['ASDFQWEXZCVAQFASDFASDFSS'], 'timestamp': ['13500001234'], 'nonce': ['123412323'], 'echostr': ['ENCRYPT_STR']}
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR', fragment='')
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 参数 msg_signature: ASDFQWEXZCVAQFASDFASDFSS (长度: 24)
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 参数 timestamp: 13500001234 (长度: 11)
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 参数 nonce: 123412323 (长度: 9)
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 参数 echostr: ENCRYPT_STR (长度: 11)
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'ASDFQWEXZCVAQFASDFASDFSS', 'timestamp': '13500001234', 'nonce': '123412323', 'echostr': 'ENCRYPT_STR'}
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - msg_signature: ASDFQWEXZCVAQFASDFAS... (长度: 24)
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - timestamp: 13500001234
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - nonce: 123412323
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: ENCRYPT_STR
+2026-01-12 17:09:06 - Frederica - ERROR - logger:107 - 验证签名失败: Error code: -40001, message: Invalid signature
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /callback?msg_signature=ASDFQWEXZCVAQFASDFASDFSS&timestamp=13500001234&nonce=123412323&echostr=ENCRYPT_STR HTTP/1.1" 200 -
+2026-01-12 17:09:06 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 29
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 响应内容: Signature verification failed
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:09:06 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:21 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:21 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:11:21 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:21 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:41 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:41 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:11:41 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:41 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:42 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:42 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:11:42 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:42 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:45 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:11:45 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - 192.168.1.192 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:11:45 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:11:45 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:12:35 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:12:35 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:12:35 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:12:35 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:16:15 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:16:15 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - 127.0.0.1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:16:15 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:16:15 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:27:07 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 17:27:07 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 17:30:37 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:30:37 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:30:37 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 17:30:37 - Frederica - WARNING - logger:103 - 双栈服务器初始化失败，回退到标准HTTPServer: [Errno 11001] getaddrinfo failed
+2026-01-12 17:30:39 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    服务器类型: 标准服务器 (IPv4)
+    监听地址: 0.0.0.0 (所有IPv4地址)
+    监听端口: 8080
+    
+    网络访问说明：
+    允许所有IPv4网络接口访问
+    
+    支持的协议：
+    - IPv4: 是
+    - IPv6: 否
+    
+    回调URL配置：
+    IPv4访问URL: http://localhost:8080/callback
+    IPv6访问URL: http://[0.0.0.0]:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 '::'，服务器同时支持IPv4和IPv6
+    2. 如果监听地址是 '0.0.0.0'，只支持IPv4
+    3. 如果监听地址是 '127.0.0.1' 或 'localhost'，只支持本机IPv4访问
+    4. 如果监听地址是 '::1'，只支持本机IPv6访问
+    5. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 17:30:39 - Frederica - INFO - logger:99 - 服务器正在启动，监听 0.0.0.0:8080...
+2026-01-12 17:31:08 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 17:31:08 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 17:33:05 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:33:05 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:33:05 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 17:33:06 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    服务器类型: 双栈服务器 (IPv4 + IPv6)
+    监听地址: :: (所有IPv6地址，同时支持IPv4)
+    监听端口: 8080
+    
+    网络访问说明：
+    允许所有网络接口访问（IPv4和IPv6）
+    
+    支持的协议：
+    - IPv4: 是
+    - IPv6: 是
+    
+    回调URL配置：
+    IPv4访问URL: http://localhost:8080/callback
+    IPv6访问URL: http://[::1]:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 '::'，服务器同时支持IPv4和IPv6
+    2. 如果监听地址是 '0.0.0.0'，只支持IPv4
+    3. 如果监听地址是 '127.0.0.1' 或 'localhost'，只支持本机IPv4访问
+    4. 如果监听地址是 '::1'，只支持本机IPv6访问
+    5. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 17:33:06 - Frederica - INFO - logger:99 - 服务器正在启动，监听 :::8080...
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:33:19 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - ::1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:33:19 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - ::1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:33:19 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:33:19 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:33:20 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:33:20 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:33:20 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:33:20 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:33:20 - Frederica - INFO - logger:99 - 2408:8459:c10:3136::676 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:33:20 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:33:20 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:33:38 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:33:38 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:33:38 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:33:38 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:33:38 - Frederica - INFO - logger:99 - 2408:8459:c10:3136::676 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:33:38 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:33:38 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:44 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:34:44 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:44 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:44 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:44 - Frederica - INFO - logger:99 - ::1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:34:44 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:44 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:45 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - ::1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:45 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - ::1 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:45 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - ::1 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:34:45 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:45 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:50 - Frederica - INFO - logger:99 - 收到GET请求: /
+2026-01-12 17:34:50 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/', params='', query='', fragment='')
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:50 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:50 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:50 - Frederica - INFO - logger:99 - 2400:cb00:23:1000:4f8e:a8b8:cb7:8748 - "GET / HTTP/1.1" 200 -
+2026-01-12 17:34:50 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:50 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:51 - Frederica - INFO - logger:99 - 收到GET请求: /favicon.ico
+2026-01-12 17:34:51 - Frederica - INFO - logger:99 - 查询参数: {}
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 原始查询参数: {}
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/favicon.ico', params='', query='', fragment='')
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:51 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={}
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 完整查询参数: {}
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - msg_signature: ... (长度: 0)
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - timestamp: 
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - nonce: 
+2026-01-12 17:34:51 - Frederica - ERROR - logger:107 - 缺少必要的回调参数: msg_signature=, timestamp=, nonce=
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 缺少必要参数，返回错误响应
+2026-01-12 17:34:51 - Frederica - INFO - logger:99 - 2400:cb00:582:1000:83eb:5f8b:f420:408 - "GET /favicon.ico HTTP/1.1" 200 -
+2026-01-12 17:34:51 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 27
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 响应内容: Missing required parameters
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:51 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 收到GET请求: /callback?msg_signature=527aeb1113710d134db9ffee86ed9bb2632393af&timestamp=1768210497&nonce=1768203532&echostr=pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr%2BWQs%2Bv6%2Bzc8Qt1enmE7sQ%3D%3D
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': '527aeb1113710d134db9ffee86ed9bb2632393af', 'timestamp': '1768210497', 'nonce': '1768203532', 'echostr': 'pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ=='}
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['527aeb1113710d134db9ffee86ed9bb2632393af'], 'timestamp': ['1768210497'], 'nonce': ['1768203532'], 'echostr': ['pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ==']}
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=527aeb1113710d134db9ffee86ed9bb2632393af&timestamp=1768210497&nonce=1768203532&echostr=pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr%2BWQs%2Bv6%2Bzc8Qt1enmE7sQ%3D%3D', fragment='')
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 参数 msg_signature: 527aeb1113710d134db9ffee86ed9bb2632393af (长度: 40)
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 参数 timestamp: 1768210497 (长度: 10)
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 参数 nonce: 1768203532 (长度: 10)
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 参数 echostr: pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ== (长度: 88)
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 开始处理GET回调请求...
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 处理回调请求: 方法=GET, 参数={'msg_signature': '527aeb1113710d134db9ffee86ed9bb2632393af', 'timestamp': '1768210497', 'nonce': '1768203532', 'echostr': 'pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ=='}
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 请求方法: GET
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': '527aeb1113710d134db9ffee86ed9bb2632393af', 'timestamp': '1768210497', 'nonce': '1768203532', 'echostr': 'pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ=='}
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 请求体长度: 0
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - msg_signature: 527aeb1113710d134db9... (长度: 40)
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - timestamp: 1768210497
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - nonce: 1768203532
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 处理GET验证请求，echostr: pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr+WQs+v6+zc8Qt1enmE7sQ==
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 验证成功，返回解密后的echostr: 6229190804585240285
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - 2400:cb00:522:1000:de93:d02:e548:a23e - "GET /callback?msg_signature=527aeb1113710d134db9ffee86ed9bb2632393af&timestamp=1768210497&nonce=1768203532&echostr=pR6BAbQOecaY3HJMnl9LcKoV5M1581T2IV1sY31IFESkcs5hjvAZ8oBDO6YC6IMQr%2BWQs%2Bv6%2Bzc8Qt1enmE7sQ%3D%3D HTTP/1.1" 200 -
+2026-01-12 17:34:59 - Frederica - INFO - logger:99 - GET请求处理完成，响应长度: 19
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 响应内容: 6229190804585240285
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:34:59 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/plain; charset=utf-8
+2026-01-12 17:35:11 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 17:35:11 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 
+    ========================================
+        Frederica - 企业微信聊天机器人
+    ========================================
+    
+    功能特性：
+    1. 基于企业微信官方API
+    2. 异步对话处理
+    3. 长期记忆存储
+    4. 智能上下文理解
+    5. 自然语言交互
+    
+    使用说明：
+    1. 确保已正确配置企业微信应用
+    2. 机器人将自动轮询并处理消息
+    3. 支持文本消息的智能回复
+    4. 按 Ctrl+C 停止机器人
+    
+    配置要求：
+    1. DeepSeek API密钥
+    2. 企业微信企业ID、应用Secret和应用ID
+    3. 企业微信应用需要配置消息接收权限
+    
+    注意：企业微信消息接收需要配置回调或使用其他接收方式
+          当前实现使用主动轮询模式，可能需要根据实际需求调整
+    
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 启动企业微信聊天机器人...
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 19:35:27.528385
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 企业微信连接测试成功
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 开始第 1 次消息轮询...
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 机器人已启动，开始处理消息...
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 按 Ctrl+C 停止机器人
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:27 到现在的消息
+2026-01-12 17:35:27 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:27 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:27 - Frederica - DEBUG - logger:95 - 第 1 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 开始第 2 次消息轮询...
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:32 到现在的消息
+2026-01-12 17:35:32 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:32 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 第 2 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:36 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 开始第 3 次消息轮询...
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:37 到现在的消息
+2026-01-12 17:35:37 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:37 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 第 3 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 开始第 4 次消息轮询...
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:42 到现在的消息
+2026-01-12 17:35:42 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:42 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 第 4 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:44 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 开始第 5 次消息轮询...
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:47 到现在的消息
+2026-01-12 17:35:47 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:47 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:47 - Frederica - DEBUG - logger:95 - 第 5 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:50 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 开始第 6 次消息轮询...
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:52 到现在的消息
+2026-01-12 17:35:52 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:52 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 第 6 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:53 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:56 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 开始第 7 次消息轮询...
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:25:57 到现在的消息
+2026-01-12 17:35:57 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:35:57 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 第 7 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:35:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:35:59 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:00 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:00 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:01 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 开始第 8 次消息轮询...
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:02 到现在的消息
+2026-01-12 17:36:02 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:02 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 第 8 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:03 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:03 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 开始第 9 次消息轮询...
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:07 到现在的消息
+2026-01-12 17:36:07 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:07 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:07 - Frederica - DEBUG - logger:95 - 第 9 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 开始第 10 次消息轮询...
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:12 到现在的消息
+2026-01-12 17:36:12 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:12 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 第 10 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 开始第 11 次消息轮询...
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:17 到现在的消息
+2026-01-12 17:36:17 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:17 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 第 11 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 开始第 12 次消息轮询...
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:22 到现在的消息
+2026-01-12 17:36:22 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:22 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 第 12 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 开始第 13 次消息轮询...
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:27 到现在的消息
+2026-01-12 17:36:27 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:27 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:27 - Frederica - DEBUG - logger:95 - 第 13 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 开始第 14 次消息轮询...
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:32 到现在的消息
+2026-01-12 17:36:32 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:32 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 第 14 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:36 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 开始第 15 次消息轮询...
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:37 到现在的消息
+2026-01-12 17:36:37 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:37 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 第 15 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 开始第 16 次消息轮询...
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:42 到现在的消息
+2026-01-12 17:36:42 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:42 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 第 16 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:44 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 开始第 17 次消息轮询...
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:47 到现在的消息
+2026-01-12 17:36:47 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:47 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:47 - Frederica - DEBUG - logger:95 - 第 17 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:50 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 开始第 18 次消息轮询...
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:52 到现在的消息
+2026-01-12 17:36:52 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:52 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 第 18 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:53 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:56 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 开始第 19 次消息轮询...
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:26:57 到现在的消息
+2026-01-12 17:36:57 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:36:57 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 第 19 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:36:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:58 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:36:59 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:00 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:00 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:01 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 开始第 20 次消息轮询...
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:02 到现在的消息
+2026-01-12 17:37:02 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:02 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 第 20 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:02 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:03 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:03 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:04 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:05 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:06 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 开始第 21 次消息轮询...
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:07 到现在的消息
+2026-01-12 17:37:07 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:07 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:07 - Frederica - DEBUG - logger:95 - 第 21 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:08 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:09 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:10 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:11 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 开始第 22 次消息轮询...
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:12 到现在的消息
+2026-01-12 17:37:12 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:12 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 第 22 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:12 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:13 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:14 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:15 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:16 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 开始第 23 次消息轮询...
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:17 到现在的消息
+2026-01-12 17:37:17 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:17 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 第 23 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:17 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:18 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:19 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:20 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:21 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 开始第 24 次消息轮询...
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:22 到现在的消息
+2026-01-12 17:37:22 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:22 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 第 24 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:22 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:23 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:24 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:25 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:26 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 开始第 25 次消息轮询...
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:27 到现在的消息
+2026-01-12 17:37:27 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:27 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:27 - Frederica - DEBUG - logger:95 - 第 25 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:28 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:29 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:30 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:31 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 开始第 26 次消息轮询...
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:32 到现在的消息
+2026-01-12 17:37:32 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:32 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 第 26 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:32 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:33 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:34 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:35 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:36 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 开始第 27 次消息轮询...
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:37 到现在的消息
+2026-01-12 17:37:37 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:37 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 第 27 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:37 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:38 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:39 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:40 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:41 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 开始第 28 次消息轮询...
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:42 到现在的消息
+2026-01-12 17:37:42 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:42 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 第 28 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:42 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:43 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:44 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:45 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:46 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 开始第 29 次消息轮询...
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:47 到现在的消息
+2026-01-12 17:37:47 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:47 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:47 - Frederica - DEBUG - logger:95 - 第 29 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:48 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:49 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:50 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:51 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 开始第 30 次消息轮询...
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 开始检查企业微信新消息...
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 企业微信客户端连接正常，Token有效
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 正在检查企业微信新消息...
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 尝试获取从 2026-01-12 17:27:52 到现在的消息
+2026-01-12 17:37:52 - Frederica - WARNING - logger:103 - 当前使用模拟消息检查模式
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 如需实际接收企业微信消息，请完成以下配置：
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 1. 在企业微信管理后台配置消息接收URL
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 2. 确保服务器可访问回调URL
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 3. 配置消息加解密参数
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 当前应用ID: 1000002, 企业ID: ww1b7c2409ffbded94
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 内部队列状态: 待处理消息=0, 待发送响应=0
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 当前没有待处理的内部消息
+2026-01-12 17:37:52 - Frederica - INFO - logger:99 - 消息检查完成
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 第 30 次轮询完成，等待 5 秒后继续...
+2026-01-12 17:37:52 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:53 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:54 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:55 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:56 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:56 - Frederica - INFO - logger:99 - 
+收到停止信号...
+2026-01-12 17:37:56 - Frederica - INFO - logger:99 - 停止企业微信聊天机器人...
+2026-01-12 17:37:57 - Frederica - DEBUG - logger:95 - 消息队列为空，等待中... (已处理 0 条消息)
+2026-01-12 17:37:57 - Frederica - INFO - logger:99 - 机器人已停止
+2026-01-12 17:38:03 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:38:03 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:38:03 - Frederica - INFO - logger:99 - 企业微信Access Token刷新成功，有效期至: 2026-01-12 19:38:03.405701
+2026-01-12 17:38:04 - Frederica - INFO - logger:99 - 测试消息发送成功: ChenMingHao - 这是一条测试消息，用于验证企业微信机器人连接。
+2026-01-12 17:38:04 - Frederica - INFO - logger:99 - 测试消息已发送到用户: ChenMingHao
+2026-01-12 17:41:05 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 17:41:05 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 17:41:05 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 17:41:06 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    服务器类型: 双栈服务器 (IPv4 + IPv6)
+    监听地址: :: (所有IPv6地址，同时支持IPv4)
+    监听端口: 8080
+    
+    网络访问说明：
+    允许所有网络接口访问（IPv4和IPv6）
+    
+    支持的协议：
+    - IPv4: 是
+    - IPv6: 是
+    
+    回调URL配置：
+    IPv4访问URL: http://localhost:8080/callback
+    IPv6访问URL: http://[::1]:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 '::'，服务器同时支持IPv4和IPv6
+    2. 如果监听地址是 '0.0.0.0'，只支持IPv4
+    3. 如果监听地址是 '127.0.0.1' 或 'localhost'，只支持本机IPv4访问
+    4. 如果监听地址是 '::1'，只支持本机IPv6访问
+    5. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 17:41:06 - Frederica - INFO - logger:99 - 服务器正在启动，监听 :::8080...
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 收到POST请求: /callback?msg_signature=745ed5d6672ad78a9d44d417eadd051b21d3ebdc&timestamp=1768210876&nonce=1768375089
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': '745ed5d6672ad78a9d44d417eadd051b21d3ebdc', 'timestamp': '1768210876', 'nonce': '1768375089'}
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 请求体长度: 607
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['745ed5d6672ad78a9d44d417eadd051b21d3ebdc'], 'timestamp': ['1768210876'], 'nonce': ['1768375089']}
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=745ed5d6672ad78a9d44d417eadd051b21d3ebdc&timestamp=1768210876&nonce=1768375089', fragment='')
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求头: {'x-forwarded-for': '183.47.98.227', 'Accept': '*/*', 'Content-Type': 'text/xml', 'User-Agent': 'Mozilla/4.0', 'Pragma': 'no-cache', 'cf-ray': '9bcbb27a5f4d95d9-AMS', 'Host': 'tx6p.paleflame.top:8080', 'Content-Length': '607', 'cdn-loop': 'cloudflare; loops=1', 'CF-Connecting-IP': '183.47.98.227', 'CF-IPCountry': 'CN', 'CF-Visitor': '{"scheme":"http"}', 'X-Forwarded-Proto': 'http', 'accept-encoding': 'gzip', 'Connection': 'Keep-Alive'}
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - Content-Length: 607
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 参数 msg_signature: 745ed5d6672ad78a9d44d417eadd051b21d3ebdc (长度: 40)
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 参数 timestamp: 1768210876 (长度: 10)
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 参数 nonce: 1768375089 (长度: 10)
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求体前500字符: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><Encrypt><![CDATA[34Q12qco1bi0O2Za07GMNDa4tv7dD2zhZAKi+/uPiK0LzRxFBQLpm8XljnzruAJ8iQCGoA0/3sLkB6t9h46D1qBq8vofio0EMwhgaDi6AJAli/Z1G30Sz8egBL0BKJv69lmUGkEYtUh8u1ICoHGxgfgkz6KKlSjfg+anLtPEMC12Vdi0U/q/0eI2LMMgCLxhZYrSfzZjCXhzxsqapJpXdOZHtlg3edSKdqZKpVLGOkqpsMtcHE4HVBTYHV+LwXWrZF8yYpq02+LsV2a+RH22RE90tvGskJNEk/XzvUlHLldoMLOO4FZDqnFx8ZZYE6FzSAar/MpfhrwP+W0v1V0QjSzflIgh362dh3/HgkTr/DnurYkYipT0tn4MukC4UVVg7psARY7NqciQBODOCE2TJWb5qxIO6Ye+ovqkaf
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求体MD5: -2486142235096695051
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求体是否包含XML: False
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 开始处理POST回调请求...
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 处理回调请求: 方法=POST, 参数={'msg_signature': '745ed5d6672ad78a9d44d417eadd051b21d3ebdc', 'timestamp': '1768210876', 'nonce': '1768375089'}
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求方法: POST
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': '745ed5d6672ad78a9d44d417eadd051b21d3ebdc', 'timestamp': '1768210876', 'nonce': '1768375089'}
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 请求体长度: 607
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - msg_signature: 745ed5d6672ad78a9d44... (长度: 40)
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - timestamp: 1768210876
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - nonce: 1768375089
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 处理POST消息请求，请求体长度: 607
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 解密后的XML: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><FromUserName><![CDATA[ChenMingHao]]></FromUserName><CreateTime>1768210876</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[Hello]]></Content><MsgId>7594407885124083805</MsgId><AgentID>1000002</AgentID></xml>
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 收到消息: 类型=text, 发送者=ChenMingHao
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 收到文本消息来自 ChenMingHao: Hello...
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 消息已添加到处理队列，当前队列大小: 1
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - 2400:cb00:1179:1000:d5af:f29d:9686:371e - "POST /callback?msg_signature=745ed5d6672ad78a9d44d417eadd051b21d3ebdc&timestamp=1768210876&nonce=1768375089 HTTP/1.1" 200 -
+2026-01-12 17:41:18 - Frederica - INFO - logger:99 - POST请求处理完成，响应长度: 626
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 响应内容前500字符: <xml>
+<Encrypt><![CDATA[05XRSt1XBH8tYHOM6y5g/T0osVmHpup/WfcvXANQ+huf47JdOGay2scpfaoLvK46NxNFjueoA+jFmDGzA5knntfh/Q68xYbVUFgEsrZ+9hiWCryXOwLjJ3GUOaaIux2nUI/T+NxmUXjog3ClZXGdUhyiwa5mc7bjcdaT623AqEpY5J0ZPZt9A52E7rAsDozhGsRrnhB9KINiXcdyWRWmpF0OvBjSDbFeJJ+6PJE9zXA42ocGg2Nra/9IZXm1oB71vK02QDFdkHg3x4qwWEW4m02zpXNNkyi0P5QZNcqkJ4iZZ5q3K9fVJKzFAQ5vEmd0Z7oIQjrMeOvKhfFCXdoCxMmKTVse91t8jvlqmb5iuZKFFskefgZgRIE75X9RbV3iWZq4YM3b912FTEj40e12PBMt/OZj/es8U0RileJMLZ0=]]></Encrypt>
+<MsgSignature><![CDATA[84ecb760ba4
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 响应是否包含XML: False
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 17:41:18 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/xml; charset=utf-8
+2026-01-12 17:52:30 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 17:52:30 - Frederica - INFO - logger:99 - 服务器已关闭
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - 环境检查通过！
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - DeepSeek API Key: 已设置
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - API Base: https://api.deepseek.com
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - 模型: deepseek-chat
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - 企业ID: ww1b7c2409ffbded94
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - 应用ID: 1000002
+2026-01-12 18:02:24 - Frederica - INFO - logger:99 - 应用Secret: 已设置
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 - 机器人状态：
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 -   运行状态: 已停止
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 -   待处理消息: 0
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 -   待发送响应: 0
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 -   活跃用户: 0
+2026-01-12 18:02:30 - Frederica - INFO - logger:99 -   已处理消息: 0
+2026-01-12 18:02:55 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 18:02:55 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 18:04:03 - Frederica - INFO - logger:99 - 企业微信机器人初始化完成，应用ID: 1000002
+2026-01-12 18:04:03 - Frederica - INFO - logger:99 - 回调配置: Token=FREDERICAT..., AESKey=norTzT7trW...
+2026-01-12 18:04:03 - Frederica - INFO - logger:99 - 
+    ========================================
+        Frederica - 企业微信聊天机器人
+    ========================================
+    
+    功能特性：
+    1. 基于企业微信官方API
+    2. 异步对话处理
+    3. 长期记忆存储
+    4. 智能上下文理解
+    5. 自然语言交互
+    
+    使用说明：
+    1. 确保已正确配置企业微信应用
+    2. 启动回调服务器接收企业微信消息
+    3. 在企业微信管理后台配置回调URL
+    4. 支持文本消息的智能回复
+    5. 按 Ctrl+C 停止服务器
+    
+    配置要求：
+    1. DeepSeek API密钥
+    2. 企业微信企业ID、应用Secret和应用ID
+    3. 企业微信应用需要配置消息回调URL
+    
+    回调URL配置：
+    1. 在企业微信管理后台配置回调URL
+    2. URL格式: http://你的域名或IP:端口/callback
+    3. Token: FREDERICATOKEN
+    4. EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+    5. 消息加解密方式: 安全模式
+    
+    注意：企业微信消息接收必须使用回调模式
+          轮询模式已被废弃，不再支持
+    
+2026-01-12 18:04:03 - Frederica - INFO - logger:99 - 机器人初始化成功
+2026-01-12 18:04:04 - Frederica - INFO - logger:99 - 
+    ========================================
+        企业微信回调服务器启动
+    ========================================
+    
+    服务器配置：
+    服务器类型: 双栈服务器 (IPv4 + IPv6)
+    监听地址: :: (所有IPv6地址，同时支持IPv4)
+    监听端口: 8080
+    
+    网络访问说明：
+    允许所有网络接口访问（IPv4和IPv6）
+    
+    支持的协议：
+    - IPv4: 是
+    - IPv6: 是
+    
+    回调URL配置：
+    IPv4访问URL: http://localhost:8080/callback
+    IPv6访问URL: http://[::1]:8080/callback
+    
+    重要提示：
+    1. 如果监听地址是 '::'，服务器同时支持IPv4和IPv6
+    2. 如果监听地址是 '0.0.0.0'，只支持IPv4
+    3. 如果监听地址是 '127.0.0.1' 或 'localhost'，只支持本机IPv4访问
+    4. 如果监听地址是 '::1'，只支持本机IPv6访问
+    5. 生产环境建议使用域名和HTTPS
+    
+    企业微信配置要求：
+    1. 在企业微信管理后台配置回调URL
+    2. 使用以下参数：
+       - URL: http://tx6p.paleflame.top/callback (根据实际域名调整)
+       - Token: FREDERICATOKEN
+       - EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+       - 消息加解密方式: 安全模式
+    
+    按 Ctrl+C 停止服务器
+    
+2026-01-12 18:04:04 - Frederica - INFO - logger:99 - 服务器正在启动，监听 :::8080...
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 收到POST请求: /callback?msg_signature=a65cbde948c8cf2408fd715fdde268dda2b6ec94&timestamp=1768212266&nonce=1768212671
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'a65cbde948c8cf2408fd715fdde268dda2b6ec94', 'timestamp': '1768212266', 'nonce': '1768212671'}
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 请求体长度: 563
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['a65cbde948c8cf2408fd715fdde268dda2b6ec94'], 'timestamp': ['1768212266'], 'nonce': ['1768212671']}
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=a65cbde948c8cf2408fd715fdde268dda2b6ec94&timestamp=1768212266&nonce=1768212671', fragment='')
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求头: {'x-forwarded-for': '14.116.241.251', 'Accept': '*/*', 'Content-Type': 'text/xml', 'User-Agent': 'Mozilla/4.0', 'Pragma': 'no-cache', 'cf-ray': '9bcbd4690f89d5d8-AMS', 'Host': 'tx6p.paleflame.top:8080', 'Content-Length': '563', 'cdn-loop': 'cloudflare; loops=1', 'CF-Connecting-IP': '14.116.241.251', 'CF-IPCountry': 'CN', 'CF-Visitor': '{"scheme":"http"}', 'X-Forwarded-Proto': 'http', 'accept-encoding': 'gzip', 'Connection': 'Keep-Alive'}
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - Content-Length: 563
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 参数 msg_signature: a65cbde948c8cf2408fd715fdde268dda2b6ec94 (长度: 40)
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 参数 timestamp: 1768212266 (长度: 10)
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 参数 nonce: 1768212671 (长度: 10)
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求体前500字符: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><Encrypt><![CDATA[y1Zp4/sdAHkBZBtOdPAYjbZZSZVGAQv6EyPjKo6WQQCiM6pSegDrpR12tQiR9pBD5lWVpkZvnuaXjpZtcFLTqWiH4+ZUu+2XofCh3PhAq+qAhXK112bE/SqxI4zl0JdNaMhHI9PxBtoxISaIPvi0IsAjUcH+knh4aesp1JPwVG/t0SmdFDLETIZEucHuHhXa3zp5rfx77LWKT4dmJmedhuMFD7Z18U2Xr7s25+Js3UPA1kTIbj6CTkQtWPM2DRCotUFJ3oqyvr8FlWJoJTUHcu8AaJEP5toL/6feuHN4PRZorLroEYDg/scaFatpUccxBLY84M1bCbXNFBfrCDkGBOSZVf5AVrvLr2XL2/N60hKK89AdR1gMs7H98NNnZtvepwUXsLYYzM86UxGfMb+G1EdWswF9lHn3Nm1mML
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求体MD5: 8058929450332152479
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求体是否包含XML: False
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 开始处理POST回调请求...
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 处理回调请求: 方法=POST, 参数={'msg_signature': 'a65cbde948c8cf2408fd715fdde268dda2b6ec94', 'timestamp': '1768212266', 'nonce': '1768212671'}
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求方法: POST
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'a65cbde948c8cf2408fd715fdde268dda2b6ec94', 'timestamp': '1768212266', 'nonce': '1768212671'}
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 请求体长度: 563
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - msg_signature: a65cbde948c8cf2408fd... (长度: 40)
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - timestamp: 1768212266
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - nonce: 1768212671
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 处理POST消息请求，请求体长度: 563
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 解密后的XML: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><FromUserName><![CDATA[ChenMingHao]]></FromUserName><CreateTime>1768212265</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[Hi]]></Content><MsgId>7594413854564280413</MsgId><AgentID>1000002</AgentID></xml>
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 收到消息: 类型=text, 发送者=ChenMingHao
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 收到文本消息来自 ChenMingHao: Hi...
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 消息已添加到处理队列，当前队列大小: 1
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - 2400:cb00:994:1000:30c0:1fad:c196:2098 - "POST /callback?msg_signature=a65cbde948c8cf2408fd715fdde268dda2b6ec94&timestamp=1768212266&nonce=1768212671 HTTP/1.1" 200 -
+2026-01-12 18:04:28 - Frederica - INFO - logger:99 - POST请求处理完成，响应长度: 626
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 响应内容前500字符: <xml>
+<Encrypt><![CDATA[flxbOMwg1PLg5Pi0BdAlE/5SpPjyWmDEOyNPuyO+QYwlciv7lz8ErNNr6VaQZ+ocx9b/myQgce3vyw/x2Oxx8ttgQ6c7/LeCq7yQtQ+erbpSukdU5NgM6twDdwa1t8MAjeyUEn2aiJp4AI6/DOq+Tf2u1D4lxajM9fB9+H6mrX5IR1J5VvMR6SwJJo5WK+JcwGja4f+KK5v1m6XJ9dLZ29n5hk+BTMbnfi7W9/jkWIIJYgoqomZpmNiSyIr9k594i7XYJtK1htZkN4Eb1DaHHjsi+7Z8P29doJNGVgOPrL83IGvB1JDntBVM+7uFF/O0mkA58hOuGqFyHabuUgBnMid6vQDJyPgYCFJzOnvy0iKRnBc5sI4hfPUAguGY6eqAfY2tMkbMJu683ypCVLQ8sawhRGNWOEFf7J+Zh2z+svQ=]]></Encrypt>
+<MsgSignature><![CDATA[0891326d30a
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 响应是否包含XML: False
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 18:04:28 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/xml; charset=utf-8
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 收到POST请求: /callback?msg_signature=c0719a4b6cb42e21c25cef4e4da42d31a8519cc6&timestamp=1768212285&nonce=1768331875
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 查询参数: {'msg_signature': 'c0719a4b6cb42e21c25cef4e4da42d31a8519cc6', 'timestamp': '1768212285', 'nonce': '1768331875'}
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 请求体长度: 607
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 原始查询参数: {'msg_signature': ['c0719a4b6cb42e21c25cef4e4da42d31a8519cc6'], 'timestamp': ['1768212285'], 'nonce': ['1768331875']}
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 解析后的URL: ParseResult(scheme='', netloc='', path='/callback', params='', query='msg_signature=c0719a4b6cb42e21c25cef4e4da42d31a8519cc6&timestamp=1768212285&nonce=1768331875', fragment='')
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求头: {'x-forwarded-for': '183.47.98.168', 'Accept': '*/*', 'Content-Type': 'text/xml', 'User-Agent': 'Mozilla/4.0', 'Pragma': 'no-cache', 'cf-ray': '9bcbd4e07e71f5e2-AMS', 'Host': 'tx6p.paleflame.top:8080', 'Content-Length': '607', 'cdn-loop': 'cloudflare; loops=1', 'CF-Connecting-IP': '183.47.98.168', 'CF-IPCountry': 'CN', 'CF-Visitor': '{"scheme":"http"}', 'X-Forwarded-Proto': 'http', 'accept-encoding': 'gzip', 'Connection': 'Keep-Alive'}
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - Content-Length: 607
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 参数 msg_signature: c0719a4b6cb42e21c25cef4e4da42d31a8519cc6 (长度: 40)
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 参数 timestamp: 1768212285 (长度: 10)
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 参数 nonce: 1768331875 (长度: 10)
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求体前500字符: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><Encrypt><![CDATA[tfxschWteOJs5t4bqVwUT4XM4nLvox0FJmDrVa+gKC9jfCE3waqUWLEgqQOPi0Dj7fs3t+diiq9aocpajgM3/4/Ve31iWzuHQMVcfCtBgKrhUI0QLQe1xBrdDeJ6PHZ2rp9Ft6Dz7WeglNbZ6eBRuv325QXymk+cgyA4XT7l++VDbRMnXUXP8MdZ/mqtUGiXKchtwvfAvAqKhlXSwdhNHzasmtisWV+MLQy9mfYDa8+c9wa3Yq/VW+VG8Zyk/IIZJlAVS+rL9NCwYQdlMV9AQ/piuA98y6cFd9FUzSiI4zVPdNSPca3eQEFIE9D2i1/FLAgV/EDy3XG2GLgao32Fydkf9J4d/G+vZTR06ofLw9Nm5HFwPPZu1Q4Xz81VkG+cP7WlP5UO7n9yI7wAzATnzSdrtOZqInJuhe8IXt
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求体MD5: -5307493244998137350
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求体是否包含XML: False
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 开始处理POST回调请求...
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 处理回调请求: 方法=POST, 参数={'msg_signature': 'c0719a4b6cb42e21c25cef4e4da42d31a8519cc6', 'timestamp': '1768212285', 'nonce': '1768331875'}
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求方法: POST
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 完整查询参数: {'msg_signature': 'c0719a4b6cb42e21c25cef4e4da42d31a8519cc6', 'timestamp': '1768212285', 'nonce': '1768331875'}
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 请求体长度: 607
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - msg_signature: c0719a4b6cb42e21c25c... (长度: 40)
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - timestamp: 1768212285
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - nonce: 1768331875
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 处理POST消息请求，请求体长度: 607
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 解密后的XML: <xml><ToUserName><![CDATA[ww1b7c2409ffbded94]]></ToUserName><FromUserName><![CDATA[ChenMingHao]]></FromUserName><CreateTime>1768212285</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[你好]]></Content><MsgId>7594413936980868189</MsgId><AgentID>1000002</AgentID></xml>
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 收到消息: 类型=text, 发送者=ChenMingHao
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 收到文本消息来自 ChenMingHao: 你好...
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 消息已添加到处理队列，当前队列大小: 2
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - 2400:cb00:20:1000:2549:8228:b468:1ea1 - "POST /callback?msg_signature=c0719a4b6cb42e21c25cef4e4da42d31a8519cc6&timestamp=1768212285&nonce=1768331875 HTTP/1.1" 200 -
+2026-01-12 18:04:47 - Frederica - INFO - logger:99 - POST请求处理完成，响应长度: 626
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 响应内容前500字符: <xml>
+<Encrypt><![CDATA[IW5TIY2JJSvmru1zT6jcDZaKek9Ekx4jAEfyJks6wfZzKqPHp1vt/7uDb3VFgXvoZwCIINtPITecO1JtpkpuEFKMkXANPLuTS+c34QK7axxXeX9CZuypXl6Z6MHZDmkdAdQt/cB5cCNT52NlC/TvAN83Ri7UaNTZH+3YFkdu/oOOTzUUVKwHXn0SFEcHwQAKYHUZxauCGHIzAZGX86KhN/bTpkG6aaxcrdU4v62XQN43DEfchV8iq2xCA61ICgFTja6PfapUGu1mbHtz/uClxjQkD/VPxUmtF/dwPgKlxfhnpd+AGo2Tx/JaZiT6CUAk7aL4A6hBQ8BRTQozk+ErnzVkAwQClEVoiw0/dtr+LfXwaQiUMNc5123HedQvuAPQfcdbDEkY5AfEUQwCe35jyG0PSETBZOfmmsEluuDtQJY=]]></Encrypt>
+<MsgSignature><![CDATA[08e9585ef0f
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 响应是否包含XML: False
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 响应状态: 200 OK
+2026-01-12 18:04:47 - Frederica - DEBUG - logger:95 - 响应Content-Type: text/xml; charset=utf-8
+2026-01-12 18:10:45 - Frederica - INFO - logger:99 - 
+收到停止信号，正在关闭服务器...
+2026-01-12 18:10:45 - Frederica - INFO - logger:99 - 服务器已关闭

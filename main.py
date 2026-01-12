@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Frederica - 企业微信聊天机器人主程序
+支持回调服务器模式
 """
 
 import sys
@@ -12,6 +13,7 @@ from dotenv import load_dotenv
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from src.wechat_bot import get_bot
+from src.callback_server import run_callback_server
 from src.logger import get_logger
 
 
@@ -52,6 +54,9 @@ def main():
     parser.add_argument('--clear-memory', metavar='USER_ID', help='清除指定用户的记忆')
     parser.add_argument('--memory-summary', metavar='USER_ID', help='显示用户的记忆摘要')
     parser.add_argument('--send-test', metavar='USER_ID', help='发送测试消息到指定用户')
+    parser.add_argument('--callback', action='store_true', help='启动回调服务器（默认模式）')
+    parser.add_argument('--host', default='0.0.0.0', help='回调服务器监听地址（默认: 0.0.0.0）')
+    parser.add_argument('--port', type=int, default=8080, help='回调服务器监听端口（默认: 8080）')
     
     args = parser.parse_args()
     
@@ -110,7 +115,7 @@ def main():
             logger.error(f"发送测试消息失败，请检查配置")
         return
     
-    # 启动机器人
+    # 启动回调服务器（默认模式）
     logger = get_logger()
     logger.info("""
     ========================================
@@ -126,26 +131,34 @@ def main():
     
     使用说明：
     1. 确保已正确配置企业微信应用
-    2. 机器人将自动轮询并处理消息
-    3. 支持文本消息的智能回复
-    4. 按 Ctrl+C 停止机器人
+    2. 启动回调服务器接收企业微信消息
+    3. 在企业微信管理后台配置回调URL
+    4. 支持文本消息的智能回复
+    5. 按 Ctrl+C 停止服务器
     
     配置要求：
     1. DeepSeek API密钥
     2. 企业微信企业ID、应用Secret和应用ID
-    3. 企业微信应用需要配置消息接收权限
+    3. 企业微信应用需要配置消息回调URL
     
-    注意：企业微信消息接收需要配置回调或使用其他接收方式
-          当前实现使用主动轮询模式，可能需要根据实际需求调整
+    回调URL配置：
+    1. 在企业微信管理后台配置回调URL
+    2. URL格式: http://你的域名或IP:端口/callback
+    3. Token: FREDERICATOKEN
+    4. EncodingAESKey: norTzT7trWzPklIJEBILTG7UMzMXuibpzlAVaS4zag0
+    5. 消息加解密方式: 安全模式
+    
+    注意：企业微信消息接收必须使用回调模式
+          轮询模式已被废弃，不再支持
     """)
     
     try:
-        bot.start()
+        # 启动回调服务器
+        run_callback_server(host=args.host, port=args.port)
     except KeyboardInterrupt:
-        logger.info("\n收到停止信号，正在关闭机器人...")
-        bot.stop()
+        logger.info("\n收到停止信号，正在关闭服务器...")
     except Exception as e:
-        logger.error(f"机器人运行出错: {e}")
+        logger.error(f"服务器运行出错: {e}")
         sys.exit(1)
 
 
