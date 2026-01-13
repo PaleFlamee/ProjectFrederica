@@ -202,6 +202,12 @@ def run_callback_server(host: str = '::', port: int = 8080):
     try:
         bot = get_bot()
         logger.info("机器人初始化成功")
+        
+        # 启动机器人消息处理线程（非阻塞模式）
+        logger.info("启动机器人消息处理线程（非阻塞模式）...")
+        bot.start(blocking=False)
+        logger.info("机器人消息处理线程已启动")
+        
     except Exception as e:
         logger.error(f"机器人初始化失败: {e}")
         return
@@ -283,10 +289,14 @@ def run_callback_server(host: str = '::', port: int = 8080):
         httpd.serve_forever()
     except KeyboardInterrupt:
         logger.info("\n收到停止信号，正在关闭服务器...")
+        logger.info("停止机器人消息处理线程...")
+        bot.stop()
         httpd.server_close()
         logger.info("服务器已关闭")
     except Exception as e:
         logger.error(f"服务器运行出错: {e}")
+        logger.info("停止机器人消息处理线程...")
+        bot.stop()
         httpd.server_close()
 
 
@@ -294,7 +304,7 @@ if __name__ == '__main__':
     import argparse
     
     parser = argparse.ArgumentParser(description='企业微信回调服务器')
-    parser.add_argument('--host', default='0.0.0.0', help='监听地址 (默认: 0.0.0.0)')
+    parser.add_argument('--host', default='::', help='监听地址 (默认: ::，支持IPv4和IPv6双栈)')
     parser.add_argument('--port', type=int, default=8080, help='监听端口 (默认: 8080)')
     parser.add_argument('--test', action='store_true', help='测试回调功能')
     

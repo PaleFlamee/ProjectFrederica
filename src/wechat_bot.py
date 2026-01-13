@@ -109,6 +109,11 @@ class WeChatWorkBot:
         # 初始化日志器
         self.logger = get_logger()
         
+        # 微信客服相关状态
+        self.kf_token = None
+        self.kf_open_kfid = None
+        self.kf_cursor = None  # 用于增量拉取消息
+        
         self.logger.info(f"企业微信机器人初始化完成，应用ID: {self.agentid}")
         self.logger.info(f"回调配置: Token={self.callback_token[:10]}..., AESKey={self.encoding_aes_key[:10]}...")
     
@@ -153,11 +158,6 @@ class WeChatWorkBot:
         user_name = message['user_name']
         content = message['content']
         
-        # 检查是否需要回复
-        if not self.llm.should_respond(content):
-            self.logger.debug(f"跳过回复用户 {user_name} 的消息: {content[:30]}...")
-            return
-        
         # 获取用户会话
         if user_id not in self.user_sessions:
             self.user_sessions[user_id] = {
@@ -196,25 +196,38 @@ class WeChatWorkBot:
                 'content': msg['content']
             })
         
-        # 生成响应
+        # 生成响应（允许LLM主动决定是否保持沉默）
         self.logger.info(f"为 {user_name} 生成响应...")
-        response = self.llm.generate_response(llm_messages, context)
+        response = self.llm.generate_response(llm_messages, context, allow_silent=True)
         
         if response['success']:
             reply_content = response['content']
+            is_silent = response.get('is_silent', False)
             
             # 检查是否是沉默响应
-            if reply_content == "[SILENT]":
-                self.logger.info(f"对用户 {user_name} 保持沉默")
+            if is_silent or reply_content == "[SILENT]":
+                self.logger.info(f"LLM决定对用户 {user_name} 保持沉默")
+                # 从历史记录中移除用户的这条消息，因为LLM决定不回应
+                # 这样可以避免沉默响应影响后续对话
+                if session['history'] and session['history'][-1]['role'] == 'user':
+                    session['history'].pop()
                 return
             
-            # 添加到响应队列
-            self.response_queue.put({
+            # 添加到响应队列，传递原始消息的所有相关参数
+            response_data = {
                 'user_id': user_id,
                 'user_name': user_name,
                 'content': reply_content,
                 'msg_id': message['msg_id']
-            })
+            }
+            
+            # 传递客服相关参数（如果存在）
+            if 'is_kf_event' in message:
+                response_data['is_kf_event'] = message['is_kf_event']
+            if 'open_kfid' in message:
+                response_data['open_kfid'] = message['open_kfid']
+            
+            self.response_queue.put(response_data)
             
             # 添加到历史记录
             session['history'].append({
@@ -264,6 +277,23 @@ class WeChatWorkBot:
             user_id = response['user_id']
             content = response['content']
             
+            # 检查是否是客服消息
+            is_kf_event = response.get('is_kf_event', False)
+            open_kfid = response.get('open_kfid', self.kf_open_kfid)
+            
+            if is_kf_event and open_kfid:
+                # 发送微信客服消息
+                self._send_kf_message(user_id, open_kfid, content)
+            else:
+                # 发送普通企业微信消息
+                self._send_work_message(user_id, content)
+            
+        except Exception as e:
+            self.logger.error(f"发送消息失败: {e}")
+    
+    def _send_work_message(self, user_id: str, content: str):
+        """发送普通企业微信消息"""
+        try:
             # 获取有效的客户端
             client = self._get_client_with_token()
             
@@ -271,7 +301,7 @@ class WeChatWorkBot:
             # 注意：需要根据接收者类型（用户、部门、标签）使用不同的API
             client.message.send_text(self.agentid, user_id, content)
             
-            self.logger.info(f"已发送消息给 {response['user_name']}: {content[:50]}...")
+            self.logger.info(f"已发送企业微信消息给 {user_id}: {content[:50]}...")
             
         except WeChatException as e:
             self.logger.error(f"发送企业微信消息失败: {e}")
@@ -280,15 +310,90 @@ class WeChatWorkBot:
                 self.logger.warning("检测到token问题，尝试刷新...")
                 self.token_manager._refresh_token()
         except Exception as e:
-            self.logger.error(f"发送消息失败: {e}")
+            self.logger.error(f"发送企业微信消息失败: {e}")
     
-    def start(self):
-        """启动机器人（回调模式）"""
+    def _send_kf_message(self, external_userid: str, open_kfid: str, content: str):
+        """发送微信客服消息"""
+        # 在方法开头导入requests，避免在异常处理中引用未定义的变量
+        import requests
+        
+        try:
+            # 参数验证
+            if not external_userid or not isinstance(external_userid, str):
+                self.logger.error(f"无效的external_userid: {external_userid}")
+                raise ValueError(f"无效的external_userid: {external_userid}")
+            
+            if not open_kfid or not isinstance(open_kfid, str):
+                self.logger.error(f"无效的open_kfid: {open_kfid}")
+                raise ValueError(f"无效的open_kfid: {open_kfid}")
+            
+            if not content or not isinstance(content, str):
+                self.logger.error(f"无效的消息内容: {content}")
+                raise ValueError(f"无效的消息内容: {content}")
+            
+            self.logger.info(f"准备发送微信客服消息: 用户={external_userid}, 客服账号={open_kfid}, 内容长度={len(content)}")
+            
+            # 获取access_token
+            access_token = self.token_manager.get_token()
+            
+            # 构建请求URL
+            url = f"https://qyapi.weixin.qq.com/cgi-bin/kf/send_msg?access_token={access_token}"
+            
+            # 构建请求体
+            request_data = {
+                "touser": external_userid,
+                "open_kfid": open_kfid,
+                "msgtype": "text",
+                "text": {
+                    "content": content
+                }
+            }
+            
+            self.logger.debug(f"微信客服API请求数据: {request_data}")
+            
+            # 发送POST请求
+            response = requests.post(url, json=request_data, timeout=10)
+            response.raise_for_status()
+            
+            result = response.json()
+            
+            if result.get("errcode") != 0:
+                error_code = result.get("errcode")
+                error_msg = result.get("errmsg")
+                
+                # 记录错误信息
+                self.logger.error(f"发送微信客服消息失败: 错误代码={error_code}, 错误信息={error_msg}")
+                self.logger.error(f"请求参数: external_userid={external_userid}, open_kfid={open_kfid}")
+                self.logger.error(f"响应结果: {result}")
+                
+                raise Exception(f"微信客服API错误 {error_code}: {error_msg}")
+            
+            self.logger.info(f"已成功发送微信客服消息给 {external_userid}: {content[:50]}...")
+            self.logger.debug(f"API响应: {result}")
+            
+        except requests.exceptions.RequestException as e:
+            self.logger.error(f"网络请求失败: {e}")
+            self.logger.error(f"请求URL: {url if 'url' in locals() else '未知'}")
+            raise Exception(f"网络请求失败: {e}")
+        except ValueError as e:
+            self.logger.error(f"参数验证失败: {e}")
+            raise
+        except Exception as e:
+            self.logger.error(f"发送微信客服消息失败: {e}", exc_info=True)
+            raise
+    
+    def start(self, blocking: bool = True):
+        """
+        启动机器人
+        
+        Args:
+            blocking: 是否阻塞运行（True: 运行主循环，适合独立运行；False: 只启动线程后返回，适合集成到其他服务中）
+        """
         if self.is_running:
             self.logger.warning("机器人已经在运行中")
             return
         
-        self.logger.info("启动企业微信聊天机器人（回调模式）...")
+        self.logger.info("启动企业微信聊天机器人...")
         
         # 测试企业微信连接
         try:
@@ -310,29 +415,34 @@ class WeChatWorkBot:
         self.response_thread.start()
         
         self.logger.info("机器人已启动，等待回调消息...")
-        self.logger.info("按 Ctrl+C 停止机器人")
         
-        # 主循环，保持程序运行
-        try:
-            while self.is_running:
-                # 检查线程状态
-                threads_alive = all([
-                    self.processing_thread.is_alive(),
-                    self.response_thread.is_alive()
-                ])
-                
-                if not threads_alive:
-                    self.logger.warning("检测到线程异常，尝试重启...")
-                    self._restart_threads()
-                
-                time.sleep(5)
-                
-        except KeyboardInterrupt:
-            self.logger.info("\n收到停止信号...")
-            self.stop()
-        except Exception as e:
-            self.logger.error(f"主循环出错: {e}")
-            self.stop()
+        if blocking:
+            self.logger.info("按 Ctrl+C 停止机器人")
+            
+            # 主循环，保持程序运行（阻塞模式）
+            try:
+                while self.is_running:
+                    # 检查线程状态
+                    threads_alive = all([
+                        self.processing_thread.is_alive(),
+                        self.response_thread.is_alive()
+                    ])
+                    
+                    if not threads_alive:
+                        self.logger.warning("检测到线程异常，尝试重启...")
+                        self._restart_threads()
+                    
+                    time.sleep(5)
+                    
+            except KeyboardInterrupt:
+                self.logger.info("\n收到停止信号...")
+                self.stop()
+            except Exception as e:
+                self.logger.error(f"主循环出错: {e}")
+                self.stop()
+        else:
+            # 非阻塞模式，只启动线程后返回
+            self.logger.info("机器人以非阻塞模式启动，线程已在后台运行")
     
     def _restart_threads(self):
         """重启线程"""
@@ -459,12 +569,24 @@ class WeChatWorkBot:
                     
                     self.logger.debug(f"解密后的XML: {decrypted_xml}")
                     
-                    # 解析XML消息
+                    # 首先尝试直接解析XML，因为wechatpy可能无法识别kf_msg_or_event事件
+                    root = ET.fromstring(decrypted_xml)
+                    
+                    # 提取MsgType和Event
+                    msg_type_elem = root.find('MsgType')
+                    event_elem = root.find('Event')
+                    
+                    msg_type = msg_type_elem.text if msg_type_elem is not None else None
+                    event_type = event_elem.text if event_elem is not None else None
+                    
+                    self.logger.info(f"直接解析XML: MsgType={msg_type}, Event={event_type}")
+                    
+                    # 解析消息对象（用于其他字段）
                     message = parse_message(decrypted_xml)
-                    self.logger.info(f"收到消息: 类型={message.type}, 发送者={message.source}")
+                    self.logger.info(f"wechatpy解析: 类型={message.type}, 发送者={message.source}")
                     
                     # 处理不同类型的消息
-                    if message.type == 'text':
+                    if msg_type == 'text':
                         # 文本消息
                         content = message.content
                         user_id = message.source
@@ -503,9 +625,85 @@ class WeChatWorkBot:
                         
                         return encrypted_reply
                     
+                    elif msg_type == 'event' and event_type == 'kf_msg_or_event':
+                        # 处理客服消息事件
+                        self.logger.info(f"处理客服消息事件 (kf_msg_or_event)")
+                        
+                        try:
+                            # 提取Token和OpenKfId
+                            token = None
+                            open_kfid = None
+                            
+                            # 提取Token
+                            token_field = root.find('Token')
+                            if token_field is not None:
+                                token = token_field.text
+                                self.logger.debug(f"提取到Token: {token[:20]}...")
+                            
+                            # 提取OpenKfId
+                            open_kfid_field = root.find('OpenKfId')
+                            if open_kfid_field is not None:
+                                open_kfid = open_kfid_field.text
+                                self.logger.debug(f"提取到OpenKfId: {open_kfid}")
+                            
+                            # 保存到实例变量
+                            if token and open_kfid:
+                                self.kf_token = token
+                                self.kf_open_kfid = open_kfid
+                                
+                                self.logger.info(f"客服事件已接收，Token: {token[:20]}..., OpenKfId: {open_kfid}")
+                                
+                                # 在新线程中拉取消息，避免阻塞回调响应
+                                threading.Thread(
+                                    target=self._fetch_kf_messages,
+                                    args=(token, open_kfid),
+                                    daemon=True
+                                ).start()
+                                
+                                self.logger.info(f"已启动消息拉取线程")
+                            else:
+                                self.logger.warning(f"无法从事件消息中提取Token或OpenKfId")
+                                self.logger.debug(f"Token: {token}, OpenKfId: {open_kfid}")
+                            
+                        except Exception as e:
+                            self.logger.error(f"解析客服事件失败: {e}")
+                            self.logger.debug(f"原始XML: {decrypted_xml}")
+                        
+                        # 返回success表示已接收
+                        reply = TextReply(
+                            content="",
+                            message=message
+                        )
+                        
+                        encrypted_reply = self.crypto.encrypt_message(
+                            reply.render(),
+                            nonce,
+                            timestamp
+                        )
+                        
+                        return encrypted_reply
+                    
+                    elif msg_type == 'event':
+                        # 其他类型的事件消息
+                        self.logger.info(f"收到其他事件消息: Event={event_type}")
+                        
+                        # 返回success表示已接收
+                        reply = TextReply(
+                            content="",
+                            message=message
+                        )
+                        
+                        encrypted_reply = self.crypto.encrypt_message(
+                            reply.render(),
+                            nonce,
+                            timestamp
+                        )
+                        
+                        return encrypted_reply
+                    
                     else:
                         # 其他类型的消息（图片、语音等）
-                        self.logger.info(f"收到非文本消息，类型: {message.type}")
+                        self.logger.info(f"收到非文本消息，类型: {msg_type}")
                         
                         # 返回success表示已接收
                         reply = TextReply(
@@ -533,6 +731,128 @@ class WeChatWorkBot:
             self.logger.error(f"处理回调请求时出错: {e}", exc_info=True)
             return "Internal server error"
     
+    def _fetch_kf_messages(self, token: str, open_kfid: str) -> None:
+        """
+        拉取微信客服消息
+        
+        Args:
+            token: 回调事件返回的token，10分钟内有效
+            open_kfid: 客服账号ID
+        """
+        try:
+            self.logger.info(f"开始拉取微信客服消息，open_kfid: {open_kfid}")
+            
+            # 获取access_token
+            access_token = self.token_manager.get_token()
+            
+            # 构建请求URL
+            url = f"https://qyapi.weixin.qq.com/cgi-bin/kf/sync_msg?access_token={access_token}"
+            
+            # 构建请求体
+            request_data = {
+                "token": token,
+                "open_kfid": open_kfid,
+                "limit": 1000,
+                "voice_format": 0
+            }
+            
+            # 如果有cursor，添加到请求中
+            if self.kf_cursor:
+                request_data["cursor"] = self.kf_cursor
+            
+            # 发送POST请求
+            import requests
+            response = requests.post(url, json=request_data, timeout=10)
+            response.raise_for_status()
+            
+            result = response.json()
+            
+            if result.get("errcode") != 0:
+                self.logger.error(f"拉取微信客服消息失败: {result.get('errmsg')}")
+                return
+            
+            # 更新cursor
+            self.kf_cursor = result.get("next_cursor")
+            
+            # 处理消息列表
+            msg_list = result.get("msg_list", [])
+            self.logger.info(f"拉取到 {len(msg_list)} 条客服消息")
+            
+            for msg in msg_list:
+                self._process_kf_message(msg)
+            
+            # 如果还有更多消息，继续拉取
+            if result.get("has_more") == 1:
+                self.logger.info("还有更多消息，继续拉取...")
+                # 为了避免阻塞，可以在新线程中继续拉取
+                threading.Thread(target=self._fetch_kf_messages, args=(token, open_kfid), daemon=True).start()
+                
+        except Exception as e:
+            self.logger.error(f"拉取微信客服消息时出错: {e}", exc_info=True)
+    
+    def _process_kf_message(self, msg: Dict[str, Any]) -> None:
+        """
+        处理单条客服消息
+        
+        Args:
+            msg: 消息数据
+        """
+        try:
+            msg_type = msg.get("msgtype")
+            origin = msg.get("origin", 0)
+            
+            # 只处理微信客户发送的消息（origin=3）
+            if origin != 3:
+                self.logger.debug(f"跳过非客户消息，origin: {origin}")
+                return
+            
+            # 获取用户ID和消息内容
+            external_userid = msg.get("external_userid")
+            open_kfid = msg.get("open_kfid")
+            
+            if not external_userid:
+                self.logger.warning("消息缺少external_userid，跳过处理")
+                return
+            
+            # 根据消息类型处理内容
+            content = ""
+            if msg_type == "text":
+                text_data = msg.get("text", {})
+                content = text_data.get("content", "")
+            elif msg_type in ["image", "voice", "video", "file"]:
+                # 媒体文件消息，暂时处理为文本提示
+                content = f"[收到{msg_type}消息]"
+            else:
+                self.logger.info(f"跳过不支持的消息类型: {msg_type}")
+                return
+            
+            if not content:
+                self.logger.warning("消息内容为空，跳过处理")
+                return
+            
+            self.logger.info(f"处理客服消息: 用户={external_userid}, 内容={content[:50]}...")
+            
+            # 生成消息ID
+            msg_id = msg.get("msgid", f"kf_{int(time.time())}_{external_userid}")
+            
+            # 添加到消息队列进行处理
+            self.message_queue.put({
+                'type': 'text',
+                'user_id': external_userid,
+                'user_name': external_userid,  # 暂时使用external_userid作为用户名
+                'content': content,
+                'msg_id': msg_id,
+                'timestamp': datetime.now().isoformat(),
+                'is_callback': True,
+                'is_kf_event': True,
+                'open_kfid': open_kfid
+            })
+            
+            self.logger.info(f"客服消息已添加到处理队列，当前队列大小: {self.message_queue.qsize()}")
+            
+        except Exception as e:
+            self.logger.error(f"处理客服消息时出错: {e}", exc_info=True)
+    
     def process_callback_message_sync(self, user_id: str, content: str) -> str:
         """
         同步处理回调消息（用于测试和直接调用）
@@ -546,11 +866,6 @@ class WeChatWorkBot:
         """
         try:
             self.logger.info(f"同步处理消息: 用户={user_id}, 内容={content}")
-            
-            # 检查是否需要回复
-            if not self.llm.should_respond(content):
-                self.logger.debug(f"跳过回复用户 {user_id} 的消息: {content[:30]}...")
-                return ""
             
             # 获取用户会话
             if user_id not in self.user_sessions:
@@ -590,16 +905,20 @@ class WeChatWorkBot:
                     'content': msg['content']
                 })
             
-            # 生成响应
+            # 生成响应（允许LLM主动决定是否保持沉默）
             self.logger.info(f"为 {user_id} 生成同步响应...")
-            response = self.llm.generate_response(llm_messages, context)
+            response = self.llm.generate_response(llm_messages, context, allow_silent=True)
             
             if response['success']:
                 reply_content = response['content']
+                is_silent = response.get('is_silent', False)
                 
                 # 检查是否是沉默响应
-                if reply_content == "[SILENT]":
-                    self.logger.info(f"对用户 {user_id} 保持沉默")
+                if is_silent or reply_content == "[SILENT]":
+                    self.logger.info(f"LLM决定对用户 {user_id} 保持沉默")
+                    # 从历史记录中移除用户的这条消息，因为LLM决定不回应
+                    if session['history'] and session['history'][-1]['role'] == 'user':
+                        session['history'].pop()
                     return ""
                 
                 # 添加到历史记录

@@ -55,7 +55,7 @@ def main():
     parser.add_argument('--memory-summary', metavar='USER_ID', help='显示用户的记忆摘要')
     parser.add_argument('--send-test', metavar='USER_ID', help='发送测试消息到指定用户')
     parser.add_argument('--callback', action='store_true', help='启动回调服务器（默认模式）')
-    parser.add_argument('--host', default='0.0.0.0', help='回调服务器监听地址（默认: 0.0.0.0）')
+    parser.add_argument('--host', default='::', help='回调服务器监听地址（默认: ::）')
     parser.add_argument('--port', type=int, default=8080, help='回调服务器监听端口（默认: 8080）')
     
     args = parser.parse_args()

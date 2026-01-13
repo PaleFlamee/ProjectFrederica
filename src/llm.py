@@ -61,17 +61,44 @@ class DeepSeekClient:
     def generate_response(self, 
                          messages: List[Dict[str, str]], 
                          context: Optional[str] = None,
-                         use_memory: bool = True) -> Dict[str, Any]:
-        """生成响应"""
+                         use_memory: bool = True,
+                         allow_silent: bool = True) -> Dict[str, Any]:
+        """生成响应
+        
+        Args:
+            messages: 对话消息列表
+            context: 上下文信息
+            use_memory: 是否使用记忆
+            allow_silent: 是否允许返回沉默响应
+            
+        Returns:
+            响应结果字典，如果LLM决定保持沉默，content字段为"[SILENT]"
+        """
         
         # 准备系统消息
+        system_content = """你是一个名为Frederica的微信聊天机器人。你友好、热情、乐于助人。
+请用中文回复，保持自然、友好的对话风格。
+
+重要指导原则：
+1. 如果用户的问题需要更多上下文，可以询问澄清。
+2. 如果用户发送的内容不明确或无法理解，可以礼貌地请求解释。
+3. 保持对话流畅自然，避免过于机械的回答。
+4. 在异步对话场景中，你需要主动判断何时应该保持沉默。
+
+何时应该保持沉默（返回[SILENT]）：
+- 当用户的发言只是简单的确认（如"好的"、"收到"、"谢谢"等），不需要进一步回应时
+- 当对话已经自然结束，不需要继续延伸时
+- 当用户的发言是礼貌性结束语（如"拜拜"、"再见"、"晚安"等）时
+- 当用户的发言是简单的表情或语气词（如"哈哈"、"呵呵"等）时
+- 当用户的发言是系统消息或非对话内容时
+- 当保持沉默能让对话更自然、更像真人对话时
+
+请根据对话上下文主动决定是否保持沉默。如果需要保持沉默，请只返回"[SILENT]"（不带任何其他内容）。
+如果需要回复，请正常回复。"""
+        
         system_message = {
             "role": "system",
-            "content": """你是一个名为Frederica的微信聊天机器人。你友好、热情、乐于助人。
-请用中文回复，保持自然、友好的对话风格。
-如果用户的问题需要更多上下文，可以询问澄清。
-如果用户发送的内容不明确或无法理解，可以礼貌地请求解释。
-保持对话流畅自然，避免过于机械的回答。"""
+            "content": system_content
         }
         
         # 如果有上下文，添加到系统消息中
@@ -95,9 +122,15 @@ class DeepSeekClient:
                 stream=False
             )
             
+            response_content = response.choices[0].message.content.strip()
+            
+            # 检查是否是沉默响应
+            is_silent = response_content == "[SILENT]" or response_content.startswith("[SILENT]")
+            
             result = {
                 "success": True,
-                "content": response.choices[0].message.content,
+                "content": response_content,
+                "is_silent": is_silent,
                 "usage": {
                     "prompt_tokens": response.usage.prompt_tokens,
                     "completion_tokens": response.usage.completion_tokens,
@@ -112,35 +145,13 @@ class DeepSeekClient:
             return {
                 "success": False,
                 "error": str(e),
-                "content": "抱歉，我遇到了一些技术问题，请稍后再试。"
+                "content": "抱歉，我遇到了一些技术问题，请稍后再试。",
+                "is_silent": False
             }
     
     def generate_silent_response(self) -> str:
         """生成沉默响应（用于异步对话中的无响应情况）"""
         return "[SILENT]"  # 特殊标记表示沉默
-    
-    def should_respond(self, message: str) -> bool:
-        """判断是否应该回复消息"""
-        # 简单的启发式规则：如果消息太短或看起来像命令/系统消息，可能不需要回复
-        message_lower = message.lower().strip()
-        
-        # 不需要回复的情况
-        no_response_patterns = [
-            'ok', '好的', '收到', '谢谢', '感谢', 
-            '拜拜', '再见', '晚安', '早安',
-            '哈哈', '呵呵', '嘿嘿',
-            '[图片]', '[文件]', '[语音]'
-        ]
-        
-        for pattern in no_response_patterns:
-            if pattern in message_lower:
-                return False
-        
-        # 如果消息太短（少于2个字符）
-        if len(message_lower) < 2:
-            return False
-        
-        return True
 
 
 # 单例模式
