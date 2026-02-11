@@ -1,8 +1,0 @@
-2026-01-11 20:27:10 - DemoLogger - DEBUG - logger:95 - 这是一条DEBUG级别的消息 - 用于调试信息
-2026-01-11 20:27:10 - DemoLogger - INFO - logger:99 - 这是一条INFO级别的消息 - 用于常规信息
-2026-01-11 20:27:10 - DemoLogger - WARNING - logger:103 - 这是一条WARNING级别的消息 - 用于警告信息
-2026-01-11 20:27:10 - DemoLogger - ERROR - logger:107 - 这是一条ERROR级别的消息 - 用于错误信息
-2026-01-11 20:27:10 - DemoLogger - CRITICAL - logger:111 - 这是一条CRITICAL级别的消息 - 用于严重错误
-2026-01-11 20:27:10 - DemoLogger - INFO - logger:99 - 使用便捷函数记录信息
-2026-01-11 20:27:10 - DemoLogger - WARNING - logger:103 - 使用便捷函数记录警告
-2026-01-11 20:27:10 - DemoLogger - ERROR - logger:107 - 使用便捷函数记录错误
