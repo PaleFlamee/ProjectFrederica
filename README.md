@@ -61,7 +61,7 @@ ProjectFrederica 是一个多功能LLM交互平台，提供两种使用方式：
      - `WECHAT_WORK_AGENTID`：应用ID
      - `WECHAT_WORK_CALLBACK_TOKEN`：回调Token
      - `WECHAT_WORK_ENCODING_AES_KEY`：加密AES Key
-   - 运行wecom_server同时设置回调URL：http://[your_domain]:8080/callback
+   - 运行wecom_server同时设置回调URL：`http://[your_domain]:8080/callback`
    - 配置可信IP
 
 2. **DeepSeek API配置**：
