@@ -1,1 +1,8 @@
 .env
+
+*.log
+*.json
+
+.vscode/
+
+__pycache__/

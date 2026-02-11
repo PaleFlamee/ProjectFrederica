@@ -183,7 +183,7 @@ def execute_tools(tool_calls: List[Any]) -> List[Dict[str, Any]]:
         function_name = tool_call.function.name
         
         # 显示工具调用
-        display_message("Tool Call", format_tool_call(tool_call))
+        display_message("Tool Call", format_tool_call(tool_call), indent=2)
         
         # 转换为字典格式（与现有工具兼容）
         tool_call_dict = {
@@ -199,7 +199,7 @@ def execute_tools(tool_calls: List[Any]) -> List[Dict[str, Any]]:
         if function_name in TOOL_EXECUTORS:
             try:
                 result = TOOL_EXECUTORS[function_name](tool_call_dict)
-                display_message("Tool Result", result, indent=2)
+                display_message("Tool Result", result)
                 
                 # 添加到结果列表
                 tool_results.append({
@@ -297,7 +297,15 @@ def chat_loop():
     if soul_content:
         messages.append({"role": "system", "content": soul_content})
         print(f"[System] 已加载soul.md内容作为system prompt（{len(soul_content)}字符）")
-    messages.append({"role": "system", "content": datetime.now().strftime("<time>%Y-%m-%d %H:%M:%S CST ") + "<channel>cli " + "<user_id>PaleFlame"})
+    
+    # 从环境变量读取user_id，必须手动指定
+    local_user_id = os.getenv("LOCAL_USER_ID")
+    if not local_user_id:
+        print("错误：未设置LOCAL_USER_ID环境变量")
+        print("请在.env文件中设置LOCAL_USER_ID，或通过系统环境变量设置")
+        print("示例：LOCAL_USER_ID=YourUserName")
+        sys.exit(1)
+    messages.append({"role": "system", "content": datetime.now().strftime("<time>%Y-%m-%d %H:%M:%S CST ") + "<channel>cli " + f"<user_id>{local_user_id}"})
 
     print("\n" + "="*60)
     print("简易LLM聊天客户端")
@@ -320,11 +328,12 @@ def chat_loop():
             if not user_input:
                 continue
             
-            # 添加时间信息
-            user_input
+            # 添加时间信息到用户输入（与企业微信版本类似）
+            time_str = datetime.now().strftime("%H:%M:%S")
+            formatted_user_input = f"[{time_str}] {user_input}"
 
             # 添加到消息历史
-            messages.append({"role": "user", "content": user_input})
+            messages.append({"role": "user", "content": formatted_user_input})
             
             # 调用API
             try:
@@ -341,9 +350,6 @@ def chat_loop():
                 if assistant_message.content:
                     display_message("Assistant", assistant_message.content)
                 
-                # 添加到消息历史（使用格式化函数确保tool_calls正确）
-                messages.append(format_assistant_message(assistant_message))
-                
                 # 处理工具调用 - 使用新封装的函数处理工具调用循环
                 current_message, messages = process_tool_calls_loop(
                     initial_message=assistant_message,
@@ -352,12 +358,6 @@ def chat_loop():
                     tools=TOOLS,
                     tool_executors=TOOL_EXECUTORS
                 )
-                
-                # 循环结束后，确保最后的消息格式正确
-                if current_message.content and messages and messages[-1]["role"] == "assistant":
-                    # 更新最后一条消息的tool_calls（如果有）
-                    display_message("System", "CORRECTION TRIGGERED")
-                    messages[-1]["tool_calls"] = current_message.tool_calls
                             
             except Exception as e:
                 display_message("System", f"API调用失败: {e}")
