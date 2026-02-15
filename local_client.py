@@ -23,6 +23,9 @@ try:
     from tools.write_to_file_tool import execute_tool_call as execute_write, TOOL_DEFINITION as WRITE_TOOL
     from tools.search_files_tool import execute_tool_call as execute_search, TOOL_DEFINITION as SEARCH_TOOL
     from tools.delete_file_or_folder_tool import execute_tool_call as execute_delete, TOOL_DEFINITION as DELETE_TOOL
+    from tools.replace_in_file_tool import execute_tool_call as execute_replace, TOOL_DEFINITION as REPLACE_TOOL
+    from tools.duckduckgo_search_tool import execute_tool_call as execute_duckduckgo, TOOL_DEFINITION as DUCKDUCKGO_TOOL
+    from tools.fetch_url_tool import execute_tool_call as execute_fetch_url, TOOL_DEFINITION as FETCH_URL_TOOL
     
     print("✓ 成功导入所有工具模块")
 except ImportError as e:
@@ -51,7 +54,10 @@ TOOLS = [
     CREATE_TOOL,
     WRITE_TOOL,
     SEARCH_TOOL,
-    DELETE_TOOL
+    DELETE_TOOL,
+    REPLACE_TOOL,
+    DUCKDUCKGO_TOOL,
+    FETCH_URL_TOOL
 ]
 
 # 工具执行器映射
@@ -61,7 +67,10 @@ TOOL_EXECUTORS = {
     "create_file_or_folder": execute_create,
     "write_file": execute_write,
     "search_files": execute_search,
-    "delete_file_or_folder": execute_delete
+    "delete_file_or_folder": execute_delete,
+    "replace_in_file": execute_replace,
+    "duckduckgo_search": execute_duckduckgo,
+    "fetch_url": execute_fetch_url
 }
 
 def load_soul_content() -> str:

@@ -50,7 +50,8 @@ def validate_path(path: str) -> bool:
     return True
 
 def search_files(path: str, keyword: str, recursive: bool = False, 
-                 context_lines: int = 3, max_context_chars: int = 1000) -> str:
+                 context_lines_before: int = 3, context_lines_after: int = 3, 
+                 max_context_chars: int = 200) -> str:
     """
     在指定目录的.md文件中搜索关键词，返回匹配的上下文
     
@@ -58,8 +59,9 @@ def search_files(path: str, keyword: str, recursive: bool = False,
         path: 搜索目录路径（相对路径，相对于根目录）
         keyword: 要搜索的关键词
         recursive: 是否递归搜索子目录，默认为False
-        context_lines: 返回的上下文行数（关键词前后各多少行），默认为3
-        max_context_chars: 每个匹配项返回的最大字符数，默认为1000
+        context_lines_before: 关键词前的上下文行数，默认为3
+        context_lines_after: 关键词后的上下文行数，默认为3
+        max_context_chars: 每个匹配项返回的最大字符数，默认为200
     
     Returns:
         str: 成功时返回搜索结果，失败时返回错误信息
@@ -86,8 +88,11 @@ def search_files(path: str, keyword: str, recursive: bool = False,
         
         keyword = keyword.strip()
         
-        if context_lines < 0:
-            return f"错误：上下文行数不能为负数，收到 {context_lines}"
+        if context_lines_before < 0:
+            return f"错误：关键词前的上下文行数不能为负数，收到 {context_lines_before}"
+        
+        if context_lines_after < 0:
+            return f"错误：关键词后的上下文行数不能为负数，收到 {context_lines_after}"
         
         if max_context_chars < 100:
             return f"错误：最大字符数至少为100，收到 {max_context_chars}"
@@ -153,8 +158,8 @@ def search_files(path: str, keyword: str, recursive: bool = False,
                 for line_num, line in enumerate(lines, 1):
                     if keyword in line:
                         # 计算上下文行范围
-                        start_line = max(1, line_num - context_lines)
-                        end_line = min(len(lines), line_num + context_lines)
+                        start_line = max(1, line_num - context_lines_before)
+                        end_line = min(len(lines), line_num + context_lines_after)
                         
                         # 收集上下文行
                         context = []
@@ -203,7 +208,7 @@ def search_files(path: str, keyword: str, recursive: bool = False,
             f"搜索完成：在 {len(md_files)} 个.md文件中找到 {total_matches} 处匹配",
             f"关键词: '{keyword}'",
             f"搜索路径: '{path}' (递归: {recursive})",
-            f"上下文设置: {context_lines} 行，最大字符数: {max_context_chars}",
+            f"上下文设置: 前{context_lines_before}行/后{context_lines_after}行，最大字符数: {max_context_chars}",
             "=" * 60,
             ""
         ]
@@ -238,14 +243,19 @@ TOOL_DEFINITION = {
                     "type": "boolean",
                     "description": "是否递归搜索子目录。默认为false（仅搜索当前目录）"
                 },
-                "context_lines": {
+                "context_lines_before": {
                     "type": "integer",
-                    "description": "返回的上下文行数（关键词前后各多少行）。默认为3，最小为0",
+                    "description": "关键词前的上下文行数。默认为3，最小为0",
+                    "minimum": 0
+                },
+                "context_lines_after": {
+                    "type": "integer",
+                    "description": "关键词后的上下文行数。默认为3，最小为0",
                     "minimum": 0
                 },
                 "max_context_chars": {
                     "type": "integer",
-                    "description": "每个匹配项返回的最大字符数。默认为1000，最小为100",
+                    "description": "每个匹配项返回的最大字符数。默认为200，最小为100",
                     "minimum": 100
                 }
             },
@@ -286,8 +296,9 @@ def execute_tool_call(tool_call: Dict[str, Any]) -> str:
         path = arguments.get("path")
         keyword = arguments.get("keyword")
         recursive = arguments.get("recursive", False)
-        context_lines = arguments.get("context_lines", 3)
-        max_context_chars = arguments.get("max_context_chars", 1000)
+        context_lines_before = arguments.get("context_lines_before", 3)
+        context_lines_after = arguments.get("context_lines_after", 3)
+        max_context_chars = arguments.get("max_context_chars", 200)
         
         # 验证必要参数
         if not path:
@@ -296,7 +307,7 @@ def execute_tool_call(tool_call: Dict[str, Any]) -> str:
             return "错误：缺少必要参数 'keyword'"
         
         # 执行工具
-        return search_files(path, keyword, recursive, context_lines, max_context_chars)
+        return search_files(path, keyword, recursive, context_lines_before, context_lines_after, max_context_chars)
         
     except json.JSONDecodeError:
         return "错误：无法解析工具参数（无效的JSON格式）"
@@ -313,12 +324,12 @@ def demo_basic_usage():
     
     # 测试搜索现有关键词
     print("1. 搜索 '青海省' 关键词:")
-    result = search_files(".", "青海省", recursive=False, context_lines=2, max_context_chars=500)
+    result = search_files(".", "青海省", recursive=False, context_lines_before=2, context_lines_after=2, max_context_chars=500)
     print(f"   结果前500字符:\n{result[:500]}...\n")
     
     # 测试递归搜索
     print("2. 测试递归搜索（当前目录无子目录）:")
-    result = search_files(".", "青海省", recursive=True, context_lines=1, max_context_chars=300)
+    result = search_files(".", "青海省", recursive=True, context_lines_before=1, context_lines_after=1, max_context_chars=300)
     print(f"   结果前300字符:\n{result[:300]}...\n")
     
     # 测试不存在的关键词
@@ -337,7 +348,8 @@ def demo_basic_usage():
                 "path": ".",
                 "keyword": "绿色发展",
                 "recursive": False,
-                "context_lines": 2,
+                "context_lines_before": 2,
+                "context_lines_after": 2,
                 "max_context_chars": 400
             })
         }

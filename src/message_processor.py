@@ -40,6 +40,9 @@ try:
     from tools.write_to_file_tool import TOOL_DEFINITION as WRITE_TOOL
     from tools.search_files_tool import TOOL_DEFINITION as SEARCH_TOOL
     from tools.delete_file_or_folder_tool import TOOL_DEFINITION as DELETE_TOOL
+    from tools.replace_in_file_tool import TOOL_DEFINITION as REPLACE_TOOL
+    from tools.duckduckgo_search_tool import TOOL_DEFINITION as DUCKDUCKGO_TOOL
+    from tools.fetch_url_tool import TOOL_DEFINITION as FETCH_URL_TOOL
     
     TOOLS_AVAILABLE = True
     print("✓ 成功导入local_client和工具模块")
@@ -395,40 +398,40 @@ def setup_message_processor() -> MessageProcessor:
     return _message_processor_instance
 
 
-if __name__ == "__main__":
-    # 测试消息处理器
-    import time
+# if __name__ == "__main__":
+#     # 测试消息处理器
+#     import time
     
-    print("测试消息处理器...")
+#     print("测试消息处理器...")
     
-    # 设置配置（使用测试配置）
-    os.environ["DEEPSEEK_API_KEY"] = "test_key"
-    os.environ["WECHAT_WORK_CORPID"] = "test_corpid"
-    os.environ["WECHAT_WORK_CORPSECRET"] = "test_secret"
-    os.environ["WECHAT_WORK_AGENTID"] = "test_id"
+#     # 设置配置（使用测试配置）
+#     os.environ["DEEPSEEK_API_KEY"] = "test_key"
+#     os.environ["WECHAT_WORK_CORPID"] = "test_corpid"
+#     os.environ["WECHAT_WORK_CORPSECRET"] = "test_secret"
+#     os.environ["WECHAT_WORK_AGENTID"] = "test_id"
     
-    processor = setup_message_processor()
+#     processor = setup_message_processor()
     
-    # 测试状态
-    status = processor.get_status()
-    print(f"处理器状态: {status}")
+#     # 测试状态
+#     status = processor.get_status()
+#     print(f"处理器状态: {status}")
     
-    # 测试合并消息
-    test_messages = [
-        UserMessage("msg1", "test_user", "第一条消息"),
-        UserMessage("msg2", "test_user", "第二条消息"),
-        UserMessage("msg3", "test_user", "第三条消息")
-    ]
+#     # 测试合并消息
+#     test_messages = [
+#         UserMessage("msg1", "test_user", "第一条消息"),
+#         UserMessage("msg2", "test_user", "第二条消息"),
+#         UserMessage("msg3", "test_user", "第三条消息")
+#     ]
     
-    merged = processor._merge_messages(test_messages)
-    print(f"合并后的消息:\n{merged}")
+#     merged = processor._merge_messages(test_messages)
+#     print(f"合并后的消息:\n{merged}")
     
-    # 测试分段解析
-    test_response = "第一段内容<SEGMENTATION>第二段内容<SEGMENTATION>第三段内容"
-    segments = processor._parse_segmentation(test_response)
-    print(f"分段解析结果: {segments}")
+#     # 测试分段解析
+#     test_response = "第一段内容<SEGMENTATION>第二段内容<SEGMENTATION>第三段内容"
+#     segments = processor._parse_segmentation(test_response)
+#     print(f"分段解析结果: {segments}")
     
-    # 测试立即处理（需要真实的API密钥）
-    # processor.process_message_immediately("test_user", "test_msg", "你好")
+#     # 测试立即处理（需要真实的API密钥）
+#     # processor.process_message_immediately("test_user", "test_msg", "你好")
     
-    print("测试完成")
+#     print("测试完成")

@@ -364,39 +364,39 @@ def setup_session_manager() -> UserSessionManager:
     return _session_manager_instance
 
 
-if __name__ == "__main__":
-    # 测试用户会话管理器
-    import time
+# if __name__ == "__main__":
+#     # 测试用户会话管理器
+#     import time
     
-    manager = setup_session_manager()
+#     manager = setup_session_manager()
     
-    # 测试添加消息
-    print("测试添加消息...")
-    manager.add_message("user1", "msg1", "你好，这是第一条消息")
-    manager.add_message("user1", "msg2", "这是第二条消息")
-    manager.add_message("user2", "msg3", "用户2的消息")
+#     # 测试添加消息
+#     print("测试添加消息...")
+#     manager.add_message("user1", "msg1", "你好，这是第一条消息")
+#     manager.add_message("user1", "msg2", "这是第二条消息")
+#     manager.add_message("user2", "msg3", "用户2的消息")
     
-    # 测试获取统计信息
-    stats = manager.get_stats()
-    print(f"统计信息: {stats}")
+#     # 测试获取统计信息
+#     stats = manager.get_stats()
+#     print(f"统计信息: {stats}")
     
-    # 测试批量处理候选
-    print("等待批量处理超时...")
-    time.sleep(2)  # 等待2秒
+#     # 测试批量处理候选
+#     print("等待批量处理超时...")
+#     time.sleep(2)  # 等待2秒
     
-    candidates = manager.get_batch_candidates()
-    print(f"批量处理候选: {candidates}")
+#     candidates = manager.get_batch_candidates()
+#     print(f"批量处理候选: {candidates}")
     
-    # 测试获取待处理消息
-    for user_id in candidates:
-        messages = manager.get_messages_for_processing(user_id)
-        if messages:
-            print(f"用户 {user_id} 的待处理消息: {len(messages)} 条")
-            manager.mark_processing_complete(user_id, success=True)
+#     # 测试获取待处理消息
+#     for user_id in candidates:
+#         messages = manager.get_messages_for_processing(user_id)
+#         if messages:
+#             print(f"用户 {user_id} 的待处理消息: {len(messages)} 条")
+#             manager.mark_processing_complete(user_id, success=True)
     
-    # 测试清理过期会话
-    print("测试清理过期会话...")
-    manager.cleanup_expired_sessions()
+#     # 测试清理过期会话
+#     print("测试清理过期会话...")
+#     manager.cleanup_expired_sessions()
     
-    # 关闭管理器
-    manager.shutdown()
+#     # 关闭管理器
+#     manager.shutdown()

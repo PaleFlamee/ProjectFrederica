@@ -90,6 +90,8 @@ WeChat Work version supports the following tools:
 - ✏️ `write_file`: Write content to file
 - 🔍 `search_files`: Search file content
 - 🗑️ `delete_file_or_folder`: Delete file or folder
+- 🔍 `duckduckgo_search`: Search the web using DuckDuckGo
+- 🌐 `fetch_url`: Fetch webpage content using Jina Reader API
 
 ## Local Client Version Guide
 
@@ -159,6 +161,10 @@ Type 'quit' or 'exit' to exit the program
 ### Search Tool
 - **search_files**: Search for files containing specific text in the specified directory
 
+### Web Tools
+- **duckduckgo_search**: Search the web using DuckDuckGo. Returns formatted search results with titles, URLs, and summaries.
+- **fetch_url**: Fetch webpage content using Jina Reader API. Converts webpages to Markdown format with content extraction.
+
 ### Tool Extension
 The project uses modular design, making it easy to add new tools:
 1. Create a new tool module in the `tools/` directory
@@ -205,6 +211,10 @@ LOG_BACKUP_COUNT=5
 MESSAGE_BATCH_TIMEOUT=40  # seconds, batch processing timeout
 CONVERSATION_TIMEOUT=3600  # seconds, conversation timeout (60 minutes)
 MAX_USERS=10  # maximum number of users
+
+# Jina Reader API configuration (for fetch_url tool)
+JINA_API_BASE=https://r.jina.ai
+JINA_API_KEY=your_jina_api_key_here
 ```
 
 ### soul.md Personality Definition

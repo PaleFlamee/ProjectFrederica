@@ -88,6 +88,8 @@ python wecom_server.py
 - ✏️ `write_file`：写入文件内容
 - 🔍 `search_files`：搜索文件内容
 - 🗑️ `delete_file_or_folder`：删除文件或文件夹
+- 🔍 `duckduckgo_search`：使用DuckDuckGo进行网络搜索
+- 🌐 `fetch_url`：使用Jina Reader API获取网页内容
 
 ## 本地客户端使用指南
 
@@ -157,6 +159,10 @@ python local_client.py
 ### 搜索工具
 - **search_files**：在指定目录中搜索包含特定文本的文件
 
+### 网络工具
+- **duckduckgo_search**：使用DuckDuckGo进行网络搜索。返回包含标题、URL和摘要的格式化搜索结果。
+- **fetch_url**：使用Jina Reader API获取网页内容。将网页转换为Markdown格式，提取主要内容。
+
 ### 工具扩展
 项目采用模块化设计，可以轻松添加新工具：
 1. 在`tools/`目录下创建新的工具模块
@@ -203,6 +209,10 @@ LOG_BACKUP_COUNT=5
 MESSAGE_BATCH_TIMEOUT=40  # 秒，批量处理超时时间
 CONVERSATION_TIMEOUT=3600  # 秒，对话超时时间（60分钟）
 MAX_USERS=10  # 最大用户数
+
+# Jina Reader API配置（用于fetch_url工具）
+JINA_API_BASE=https://r.jina.ai
+JINA_API_KEY=your_jina_api_key_here
 ```
 
 ### soul.md人格定义
